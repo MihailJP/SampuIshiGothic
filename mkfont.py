@@ -11,8 +11,8 @@ tmpname = font.fullname.replace("Inconsolata LGC", "Sampu Ishi Gothic")
 font.fullname = tmpname
 font.familyname = "Sampu Ishi Gothic"
 font.em = 1000
-font.ascent = 860
-font.descent = 140
+font.ascent = 820
+font.descent = 180
 font.selection.none()
 for glyph in font:
 	if font[glyph].isWorthOutputting():
@@ -105,6 +105,14 @@ genseki.copy()
 genseki.selection.select("uni2003")
 genseki.pasteInto()
 genseki.intersect()
+
+for w in (500, 1000):
+	genseki.selection.none()
+	for glyph in genseki:
+		if genseki[glyph].isWorthOutputting() and genseki[glyph].width == w:
+			genseki.selection.select(("more",), glyph)
+	genseki.transform(psMat.scale(font.ascent / genseki.ascent), ("round", "noWidth"))
+	genseki.transform(psMat.translate(w * (1 - font.ascent / genseki.ascent) / 2), ("round", "noWidth"))
 
 if font.italicangle != 0:
 	genseki.selection.none()
