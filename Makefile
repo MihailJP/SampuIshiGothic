@@ -25,7 +25,7 @@ SampuIshiGothic-BoldItalic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-BoldItalic.s
 %.raw.ttx: %.raw.ttf
 	ttx -o $@ $<
 %.ttx: %.raw.ttx
-	cat $< | sed -e '/isFixedPitch/s/value=".*"/value="1"/' -e '' -e '/bProportion/s/value=".*"/value="9"/' > $@
+	cat $< | sed -e '/isFixedPitch/s/value=".*"/value="1"/' -e '/bProportion/s/value=".*"/value="9"/' -e '/xAvgCharWidth/s/value=".*"/value="500"/' > $@
 %.ttf: %.ttx
 	ttx -o $@ $<
 
