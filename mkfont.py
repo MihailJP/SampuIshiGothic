@@ -143,7 +143,7 @@ if font.italicangle != 0:
 for lookup in genseki.gpos_lookups:
 	genseki.removeLookup(lookup)
 for lookup in genseki.gsub_lookups:
-	if lookup.find("jp78") == lookup.find("jp83") == lookup.find("jp90") == lookup.find("nlck") == -1:
+	if lookup.find("jp78") == lookup.find("jp83") == lookup.find("jp90") == lookup.find("nlck") == lookup.find("ccmp") == -1:
 		genseki.removeLookup(lookup)
 
 # OTFグリフクラス（ワークアラウンド）
