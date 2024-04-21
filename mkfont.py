@@ -56,6 +56,14 @@ for glyph in genseki:
 		genseki.copy()
 		genseki.selection.select(genseki[glyph].glyphname.replace(".fwid", ""))
 		genseki.paste()
+for glyph in ("uni30FB", "uni3005", "uni3012"):
+	genseki.selection.select(glyph + ".aalt")
+	genseki.copy()
+	genseki.selection.select(glyph)
+	genseki.paste()
+genseki["uni2215"].altuni = None
+genseki["uni2215"].unicode = 0xff0f
+genseki["uni2215"].glyphname = "uniFF0F"
 
 # グリフの変更
 patchFont = fontforge.open(argv[4])
