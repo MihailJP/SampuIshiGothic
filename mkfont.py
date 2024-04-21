@@ -146,6 +146,11 @@ for lookup in genseki.gsub_lookups:
 	if lookup.find("jp78") == lookup.find("jp83") == lookup.find("jp90") == lookup.find("nlck") == -1:
 		genseki.removeLookup(lookup)
 
+# OTFグリフクラス（ワークアラウンド）
+for glyph in genseki:
+	if genseki[glyph].isWorthOutputting():
+		genseki[glyph].glyphclass = "baseglyph"
+
 # 統合
 font.mergeFonts(genseki)
 font.encoding = "UnicodeFull"
