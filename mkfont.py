@@ -4,6 +4,7 @@ from sys import argv
 from math import radians
 import fontforge, psMat, re
 
+# Inconsolataの読み込み、サイズ調整、諸設定
 font = fontforge.open(argv[2])
 tmpname = font.fontname.replace("InconsolataLGC", "SampuIshiGothic")
 font.fontname = tmpname
@@ -29,6 +30,7 @@ Copyright 2014-2019 Adobe (http://www.adobe.com/), with Reserved Font Name 'Sour
 font.version = "0.1"
 font.sfntRevision = None
 
+# 日本語のフォント名
 subFamily = [(x, y, z) for x, y, z in font.sfnt_names if x == "English (US)" and y == "SubFamily"][0][2]
 font.appendSFNTName("Japanese", "Family", "算譜石ゴシック")
 if subFamily == "Regular":
@@ -44,8 +46,10 @@ elif subFamily == "Bold Italic":
 	font.appendSFNTName("Japanese", "SubFamily", "太字斜体")
 	font.appendSFNTName("Japanese", "Fullname", "算譜石ゴシック 太字斜体")
 
+# 源石ゴシックを読み込み
 genseki = fontforge.open(argv[3] + "(" + [x for x in fontforge.fontsInFile(argv[3]) if x.find("JP") != -1][0] + ")")
 
+# 仮名を等幅にする
 for glyph in genseki:
 	if genseki[glyph].glyphname.find(".fwid") != -1:
 		genseki.selection.select(glyph)
@@ -53,6 +57,16 @@ for glyph in genseki:
 		genseki.selection.select(genseki[glyph].glyphname.replace(".fwid", ""))
 		genseki.paste()
 
+# グリフの変更
+patchFont = fontforge.open(argv[4])
+for glyph in patchFont:
+	patchFont.selection.select(glyph)
+	patchFont.copy()
+	genseki.selection.select(glyph)
+	genseki.paste()
+patchFont.close(); patchFont = None
+
+# 縦書き用など不要なグリフの削除
 for glyph in genseki:
 	if genseki[glyph].width != 1000 and genseki[glyph].width != 500:
 		genseki.removeGlyph(glyph)
@@ -65,6 +79,7 @@ for glyph in genseki:
 	elif genseki[glyph].glyphname.find(".aalt") != -1:
 		genseki.removeGlyph(glyph)
 
+# メトリックのコピー
 font.upos = genseki.upos
 font.uwidth = genseki.uwidth
 font.os2_winascent_add = genseki.os2_winascent_add
@@ -96,6 +111,7 @@ font.os2_supxsize = genseki.os2_supxsize
 font.os2_supyoff = genseki.os2_supyoff
 font.os2_supysize = genseki.os2_supysize
 
+# 全角スペース
 genseki.selection.select("H22073")
 genseki.copy()
 genseki.selection.select("uni2003")
@@ -106,6 +122,7 @@ genseki.selection.select("uni2003")
 genseki.pasteInto()
 genseki.intersect()
 
+# サイズ調整
 for w in (500, 1000):
 	genseki.selection.none()
 	for glyph in genseki:
@@ -114,6 +131,7 @@ for w in (500, 1000):
 	genseki.transform(psMat.scale(font.ascent / genseki.ascent), ("round", "noWidth"))
 	genseki.transform(psMat.translate(w * (1 - font.ascent / genseki.ascent) / 2), ("round", "noWidth"))
 
+# 斜体
 if font.italicangle != 0:
 	genseki.selection.none()
 	for glyph in genseki:
@@ -121,13 +139,16 @@ if font.italicangle != 0:
 			genseki.selection.select(("more",), glyph)
 	genseki.transform(psMat.skew(radians(-font.italicangle)), ("round",))
 
+# OpenType機能を整理
 for lookup in genseki.gpos_lookups:
 	genseki.removeLookup(lookup)
 for lookup in genseki.gsub_lookups:
 	if lookup.find("jp78") == lookup.find("jp83") == lookup.find("jp90") == lookup.find("nlck") == -1:
 		genseki.removeLookup(lookup)
 
+# 統合
 font.mergeFonts(genseki)
 font.encoding = "UnicodeFull"
 
+# 出力
 font.generate(argv[1])
