@@ -10,16 +10,16 @@ all: ${TARGETS}
 
 .INTERMEDIATE: ${TARGETS:.ttf=.ttx} ${TARGETS:.ttf=.raw.ttf} ${TARGETS:.ttf=.raw.ttx}
 
-SampuIshiGothic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC.sfd genseki-font/ttc/GenSekiGothic-R.ttc PatchGlyph-Regular.sfd
+SampuIshiGothic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC.sfd genseki-font/ttc/GenSekiGothic2-R.ttc PatchGlyph-Regular.sfd
 	./mkfont.py $@ $^
 
-SampuIshiGothic-Bold.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-Bold.sfd genseki-font/ttc/GenSekiGothic-B.ttc PatchGlyph-Bold.sfd
+SampuIshiGothic-Bold.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-Bold.sfd genseki-font/ttc/GenSekiGothic2-B.ttc PatchGlyph-Bold.sfd
 	./mkfont.py $@ $^
 
-SampuIshiGothic-Italic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-Italic.sfd genseki-font/ttc/GenSekiGothic-R.ttc PatchGlyph-Regular.sfd
+SampuIshiGothic-Italic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-Italic.sfd genseki-font/ttc/GenSekiGothic2-R.ttc PatchGlyph-Regular.sfd
 	./mkfont.py $@ $^
 
-SampuIshiGothic-BoldItalic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-BoldItalic.sfd genseki-font/ttc/GenSekiGothic-B.ttc PatchGlyph-Bold.sfd
+SampuIshiGothic-BoldItalic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-BoldItalic.sfd genseki-font/ttc/GenSekiGothic2-B.ttc PatchGlyph-Bold.sfd
 	./mkfont.py $@ $^
 
 %.raw.ttx: %.raw.ttf

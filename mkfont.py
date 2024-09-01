@@ -47,20 +47,9 @@ elif subFamily == "Bold Italic":
 	font.appendSFNTName("Japanese", "Fullname", "算譜石ゴシック 太字斜体")
 
 # 源石ゴシックを読み込み
-genseki = fontforge.open(argv[3] + "(" + [x for x in fontforge.fontsInFile(argv[3]) if x.find("JP") != -1][0] + ")")
+genseki = fontforge.open(argv[3] + "(" + [x for x in fontforge.fontsInFile(argv[3]) if x.find("JP") != -1 and x.find("PJP") == -1][0] + ")")
 
-# 仮名を等幅にする
-for glyph in genseki:
-	if genseki[glyph].glyphname.find(".fwid") != -1:
-		genseki.selection.select(glyph)
-		genseki.copy()
-		genseki.selection.select(genseki[glyph].glyphname.replace(".fwid", ""))
-		genseki.paste()
-for glyph in ("uni30FB", "uni3005", "uni3012"):
-	genseki.selection.select(glyph + ".aalt")
-	genseki.copy()
-	genseki.selection.select(glyph)
-	genseki.paste()
+# uni2215の特殊処理
 genseki["uni2215"].altuni = None
 genseki["uni2215"].unicode = 0xff0f
 genseki["uni2215"].glyphname = "uniFF0F"
@@ -74,6 +63,16 @@ for glyph in patchFont:
 	genseki.paste()
 patchFont.close(); patchFont = None
 
+# Ver2で仮名の幅が正しくなくなっているので直す
+for glyph in genseki:
+	if genseki[glyph].width == 940 and ((0x3040 <= genseki[glyph].unicode <= 0x30ff) or (0x31f0 <= genseki[glyph].unicode <= 0x31ff)):
+		genseki[glyph].transform(psMat.translate(30, 0), ("round",))
+		genseki[glyph].width = 1000
+genseki.selection.select("uni309B")
+genseki.copy()
+genseki.selection.select("uni3099")
+genseki.paste()
+
 # 縦書き用など不要なグリフの削除
 for glyph in genseki:
 	if genseki[glyph].width != 1000 and genseki[glyph].width != 500:
@@ -85,6 +84,8 @@ for glyph in genseki:
 	elif genseki[glyph].glyphname.find(".vert") != -1:
 		genseki.removeGlyph(glyph)
 	elif genseki[glyph].glyphname.find(".aalt") != -1:
+		genseki.removeGlyph(glyph)
+	elif genseki[glyph].glyphname.find("glyph") != -1:
 		genseki.removeGlyph(glyph)
 
 # メトリックのコピー
