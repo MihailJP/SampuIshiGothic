@@ -50,12 +50,25 @@ elif subFamily == "Bold Italic":
 genseki = fontforge.open(argv[3] + "(" + [x for x in fontforge.fontsInFile(argv[3]) if x.find("JP") != -1 and x.find("PJP") == -1][0] + ")")
 
 # 文字コード修正
-def fixUni(font, oldCode, newCode):
-	font["uni{:0>4X}".format(oldCode)].altuni = (oldCode,)
-	font["uni{:0>4X}".format(oldCode)].unicode = newCode
-	font["uni{:0>4X}".format(oldCode)].glyphname = "uni{:0>4X}".format(newCode)
-fixUni(genseki, 0x2215, 0xff0f)
-fixUni(genseki, 0x2027, 0x30fb)
+def fixUni(font, oldCode, newCode, oldCodeInAltUni):
+	font["uni{:0>4X}".format(oldCode)].altuni = (oldCode,) if oldCodeInAltUni else None
+	if oldCode != newCode:
+		font["uni{:0>4X}".format(oldCode)].unicode = newCode
+		font["uni{:0>4X}".format(oldCode)].glyphname = "uni{:0>4X}".format(newCode)
+fixUni(genseki, 0x2215, 0xff0f, True)
+fixUni(genseki, 0x2027, 0x30fb, True)
+fixUni(genseki, 0x52fb, 0x5300, False)
+fixUni(genseki, 0x5e21, 0x5e32, False)
+fixUni(genseki, 0x5910, 0x5910, False)
+fixUni(genseki, 0x7bb3, 0x7c08, False)
+#fixUni(genseki, 0x670c, 0x80a6, True)
+#fixUni(genseki, 0x6710, 0x80ca, True)
+#fixUni(genseki, 0x3b35, 0x80f6, True)
+fixUni(genseki, 0x6713, 0x6713, False)
+fixUni(genseki, 0x8c5c, 0x8c63, False)
+fixUni(genseki, 0x8eff, 0x8f27, False)
+fixUni(genseki, 0x9203, 0x9292, False)
+genseki.encoding = "UnicodeFull"
 
 # グリフの変更
 patchFont = fontforge.open(argv[4])
