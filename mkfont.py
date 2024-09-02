@@ -49,10 +49,14 @@ elif subFamily == "Bold Italic":
 # 源石ゴシックを読み込み
 genseki = fontforge.open(argv[3] + "(" + [x for x in fontforge.fontsInFile(argv[3]) if x.find("JP") != -1 and x.find("PJP") == -1][0] + ")")
 
-# uni2215の特殊処理
-genseki["uni2215"].altuni = None
+# uni2215をuniFF0Fにする
+genseki["uni2215"].altuni = ((0x2215,0,0),)
 genseki["uni2215"].unicode = 0xff0f
 genseki["uni2215"].glyphname = "uniFF0F"
+# uni2027をuni30FBにする
+genseki["uni2027"].altuni = ((0x2027,0,0),)
+genseki["uni2027"].unicode = 0x30fb
+genseki["uni2027"].glyphname = "uni30FB"
 
 # グリフの変更
 patchFont = fontforge.open(argv[4])
