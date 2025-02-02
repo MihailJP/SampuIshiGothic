@@ -46,6 +46,16 @@ elif subFamily == "Bold Italic":
 	font.appendSFNTName("Japanese", "SubFamily", "太字斜体")
 	font.appendSFNTName("Japanese", "Fullname", "算譜石ゴシック 太字斜体")
 
+# 丸数字を除去
+rejected_glyphs = []
+for glyph in font:
+	if re.search(r'[^v]+circle($|\.)', glyph):
+		rejected_glyphs += [glyph]
+	elif re.search(r'\.smallnarrow', glyph):
+		rejected_glyphs += [glyph]
+for glyph in rejected_glyphs:
+	font.removeGlyph(glyph)
+
 # 源石ゴシックを読み込み
 genseki = fontforge.open(argv[3] + "(" + [x for x in fontforge.fontsInFile(argv[3]) if x.find("JP") != -1 and x.find("PJP") == -1][0] + ")")
 
