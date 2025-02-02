@@ -22,12 +22,11 @@ font.transform(psMat.scale(634/735), ("round",))
 font.transform(psMat.translate(-8, 0), ("round",))
 for glyph in font.selection.byGlyphs:
 	glyph.width = 500
-font.copyright = """
-Copyright (c) 2006 Raph Levien
+font.copyright = """Copyright (c) 2006 Raph Levien
 Copyright (c) 2010-2012 Dimosthenis Kaponis
 Copyright (c) 2012-2024 MihailJP
 Copyright 2014-2019 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'. Source is a trademark of Adobe in the United States and/or other countries."""
-font.version = "1.0"
+font.version = "2.0"
 font.sfntRevision = None
 
 # 日本語のフォント名
@@ -89,7 +88,7 @@ for glyph in patchFont:
 	genseki.paste()
 patchFont.close(); patchFont = None
 
-# Ver2で仮名の幅が正しくなくなっているので直す
+# 源石ゴシックVer2で仮名の幅が正しくなくなっているので直す
 for glyph in genseki:
 	if genseki[glyph].width == 940 and ((0x3040 <= genseki[glyph].unicode <= 0x30ff) or (0x31f0 <= genseki[glyph].unicode <= 0x31ff)):
 		genseki[glyph].transform(psMat.translate(30, 0), ("round",))
