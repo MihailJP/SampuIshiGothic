@@ -190,7 +190,7 @@ genseki.selection.none()
 for glyph in genseki:
 	if genseki[glyph].isWorthOutputting():
 		genseki.selection.select(("more",), glyph)
-genseki.transform(psMat.compose(psMat.scale(0.91), psMat.translate(23, 0)), ('noWidth', 'round'))
+genseki.transform(psMat.compose(psMat.scale(0.95), psMat.translate(10, 0)), ('noWidth', 'round'))
 
 # 統合
 font.mergeFonts(genseki)
