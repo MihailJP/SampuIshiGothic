@@ -80,10 +80,25 @@ fixUni(genseki, 0x9203, 0x9292, False)
 genseki.encoding = "UnicodeFull"
 
 # グリフの変更
+def searchLookup(font, otTag, scriptCode):
+	for lookup in font.gsub_lookups:
+		for tag, scripts in font.getLookupInfo(lookup)[2]:
+			for scr, _ in scripts:
+				if tag == otTag and scr == scriptCode:
+					return lookup
+	return None
 patchFont = fontforge.open(argv[4])
 for glyph in patchFont:
 	patchFont.selection.select(glyph)
 	patchFont.copy()
+	if glyph not in genseki:
+		genseki.createChar(patchFont[glyph].unicode, patchFont[glyph].glyphname)
+		# 拡張濁点・半濁点
+		glyphPattern = re.search(r'^(uni30[0-9A-F]{2})_(uni309[9A])\.ccmp$', glyph, re.A)
+		if glyphPattern:
+			lookup = searchLookup(genseki, 'ccmp', 'kana')
+			subtable = genseki.getLookupSubtables(lookup)[0]
+			genseki[glyph].addPosSub(subtable, glyphPattern.group(1, 2))
 	genseki.selection.select(glyph)
 	genseki.paste()
 patchFont.close(); patchFont = None
