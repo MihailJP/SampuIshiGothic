@@ -12,6 +12,7 @@ def selectGlyphsWorthOutputting(font, f = lambda _: True):
 
 blockElements = set(range(0x2500, 0x25a0)) \
 	| set(range(0x25e2, 0x25e6)) \
+	| set(range(0xe0b0, 0xe0b4)) \
 	| set(range(0x1fb00, 0x1fbaf))
 
 # Inconsolataの読み込み、サイズ調整、諸設定
