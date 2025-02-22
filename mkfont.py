@@ -4,6 +4,12 @@ from sys import argv
 from math import radians
 import fontforge, psMat, re
 
+def selectGlyphsWorthOutputting(font, f = lambda _: True):
+	font.selection.none()
+	for glyph in font:
+		if font[glyph].isWorthOutputting() and f(font[glyph]):
+			font.selection.select(("more",), glyph)
+
 # Inconsolataの読み込み、サイズ調整、諸設定
 font = fontforge.open(argv[2])
 tmpname = font.fontname.replace("InconsolataLGC", "SampuIshiGothic")
@@ -14,10 +20,7 @@ font.familyname = "Sampu Ishi Gothic"
 font.em = 1000
 font.ascent = 820
 font.descent = 180
-font.selection.none()
-for glyph in font:
-	if font[glyph].isWorthOutputting():
-		font.selection.select(("more",), glyph)
+selectGlyphsWorthOutputting(font)
 font.transform(psMat.scale(634/735), ("round",))
 font.transform(psMat.translate(-8, 0), ("round",))
 for glyph in font.selection.byGlyphs:
@@ -173,19 +176,13 @@ genseki.intersect()
 
 # サイズ調整
 for w in (500, 1000):
-	genseki.selection.none()
-	for glyph in genseki:
-		if genseki[glyph].isWorthOutputting() and genseki[glyph].width == w:
-			genseki.selection.select(("more",), glyph)
+	selectGlyphsWorthOutputting(genseki, lambda glyph: glyph.width == w)
 	genseki.transform(psMat.scale(font.ascent / genseki.ascent), ("round", "noWidth"))
 	genseki.transform(psMat.translate(w * (1 - font.ascent / genseki.ascent) / 2), ("round", "noWidth"))
 
 # 斜体
 if font.italicangle != 0:
-	genseki.selection.none()
-	for glyph in genseki:
-		if genseki[glyph].isWorthOutputting():
-			genseki.selection.select(("more",), glyph)
+	selectGlyphsWorthOutputting(genseki)
 	genseki.transform(psMat.skew(radians(-font.italicangle)), ("round",))
 
 # OpenType機能を整理
@@ -201,10 +198,7 @@ for glyph in genseki:
 		genseki[glyph].glyphclass = "baseglyph"
 
 # サイズ調整（Ricty Diminishedと同様）
-genseki.selection.none()
-for glyph in genseki:
-	if genseki[glyph].isWorthOutputting():
-		genseki.selection.select(("more",), glyph)
+selectGlyphsWorthOutputting(genseki)
 genseki.transform(psMat.compose(psMat.scale(0.95), psMat.translate(10, 0)), ('noWidth', 'round'))
 
 # 統合
