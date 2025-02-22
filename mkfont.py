@@ -10,6 +10,10 @@ def selectGlyphsWorthOutputting(font, f = lambda _: True):
 		if font[glyph].isWorthOutputting() and f(font[glyph]):
 			font.selection.select(("more",), glyph)
 
+blockElements = set(range(0x2500, 0x25a0)) \
+	| set(range(0x25e2, 0x25e6)) \
+	| set(range(0x1fb00, 0x1fbaf))
+
 # Inconsolataの読み込み、サイズ調整、諸設定
 font = fontforge.open(argv[2])
 tmpname = font.fontname.replace("InconsolataLGC", "SampuIshiGothic")
@@ -20,9 +24,13 @@ font.familyname = "Sampu Ishi Gothic"
 font.em = 1000
 font.ascent = 820
 font.descent = 180
-selectGlyphsWorthOutputting(font)
+selectGlyphsWorthOutputting(font, lambda glyph: glyph.unicode not in blockElements)
 font.transform(psMat.scale(634/735), ("round",))
 font.transform(psMat.translate(-8, 0), ("round",))
+selectGlyphsWorthOutputting(font, lambda glyph: glyph.unicode in blockElements)
+font.transform(psMat.scale(500/599, 1), ("round",))
+font.transform(psMat.translate(0, 60), ("round",))
+selectGlyphsWorthOutputting(font)
 for glyph in font.selection.byGlyphs:
 	glyph.width = 500
 font.copyright = """Copyright (c) 2006 Raph Levien
