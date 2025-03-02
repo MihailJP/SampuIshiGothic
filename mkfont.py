@@ -57,13 +57,23 @@ elif subFamily == "Bold Italic":
 	font.appendSFNTName("Japanese", "SubFamily", "太字斜体")
 	font.appendSFNTName("Japanese", "Fullname", "算譜石ゴシック 太字斜体")
 
-# 丸数字を除去
-rejected_glyphs = []
+# 丸数字と一部の記号を除去
+rejected_glyphs = set()
 for glyph in font:
 	if re.search(r'[^v]+circle($|\.)', glyph):
-		rejected_glyphs += [glyph]
+		rejected_glyphs.add(glyph)
 	elif re.search(r'\.smallnarrow', glyph):
-		rejected_glyphs += [glyph]
+		rejected_glyphs.add(glyph)
+	elif 0x25a0 <= font[glyph].unicode <= 0x25af:
+		rejected_glyphs.add(glyph)
+	elif 0x25b2 <= font[glyph].unicode <= 0x25c9:
+		rejected_glyphs.add(glyph)
+	elif 0x25cb <= font[glyph].unicode <= 0x25cf:
+		rejected_glyphs.add(glyph)
+	elif 0x2605 <= font[glyph].unicode <= 0x2606:
+		rejected_glyphs.add(glyph)
+	elif 0x2640 <= font[glyph].unicode <= 0x266f:
+		rejected_glyphs.add(glyph)
 for glyph in rejected_glyphs:
 	font.removeGlyph(glyph)
 
