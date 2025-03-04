@@ -15,13 +15,103 @@ blockElements = set(range(0x2500, 0x25a0)) \
 	| set(range(0xe0b0, 0xe0b4)) \
 	| set(range(0x1fb00, 0x1fbaf))
 
+iwaFont = bool(re.search("SampuIwaGothic", argv[1]))
+
+def isToBeConvertedToFullwidth(font, glyph):
+	if 0x0391 <= font[glyph].unicode <= 0x03a9: # ギリシャ大文字
+		return True
+	elif 0x03b1 <= font[glyph].unicode <= 0x03c9: # ギリシャ小文字
+		return True
+	elif font[glyph].unicode == 0x0401: # 大文字Ё
+		return True
+	elif 0x0410 <= font[glyph].unicode <= 0x044f: # キリル文字（ロシア語）
+		return True
+	elif font[glyph].unicode == 0x0451: # 小文字ё
+		return True
+	elif 0x00a2 <= font[glyph].unicode <= 0x00a3:
+		return True
+	elif 0x00a7 <= font[glyph].unicode <= 0x00a8:
+		return True
+	elif font[glyph].unicode == 0x00ac:
+		return True
+	elif font[glyph].unicode == 0x00b1:
+		return True
+	elif font[glyph].unicode == 0x00b4:
+		return True
+	elif font[glyph].unicode == 0x00b6:
+		return True
+	elif font[glyph].unicode == 0x00d7:
+		return True
+	elif font[glyph].unicode == 0x00f7:
+		return True
+	elif font[glyph].unicode == 0x2010:
+		return True
+	elif 0x2014 <= font[glyph].unicode <= 0x2016:
+		return True
+	elif 0x2020 <= font[glyph].unicode <= 0x2021:
+		return True
+	elif 0x2025 <= font[glyph].unicode <= 0x2026:
+		return True
+	elif font[glyph].unicode == 0x2030:
+		return True
+	elif font[glyph].unicode == 0x2103:
+		return True
+	elif font[glyph].unicode == 0x212b:
+		return True
+	elif 0x2160 <= font[glyph].unicode <= 0x216b:
+		return True
+	elif 0x2170 <= font[glyph].unicode <= 0x217b:
+		return True
+	elif 0x2190 <= font[glyph].unicode <= 0x2193:
+		return True
+	elif 0x21d2 <= font[glyph].unicode <= 0x21d4:
+		return True
+	elif 0x2200 <= font[glyph].unicode <= 0x2208:
+		return True
+	elif font[glyph].unicode == 0x220b:
+		return True
+	elif 0x220f <= font[glyph].unicode <= 0x2212:
+		return True
+	elif 0x221a <= font[glyph].unicode <= 0x2237:
+		return True
+	elif 0x223d <= font[glyph].unicode <= 0x22a0:
+		return True
+	elif font[glyph].unicode == 0x22a5:
+		return True
+	elif 0x2312 <= font[glyph].unicode <= 0x2318:
+		return True
+	elif font[glyph].unicode == 0x23ce:
+		return True
+	elif font[glyph].unicode == 0x2423:
+		return True
+	else:
+		return False
+def isToBeConvertedToFullwidthLeft(font, glyph):
+	if font[glyph].unicode == 0x00b0:
+		return True
+	elif font[glyph].unicode == 0x2019:
+		return True
+	elif font[glyph].unicode == 0x201d:
+		return True
+	elif 0x2032 <= font[glyph].unicode <= 0x2033:
+		return True
+	else:
+		return False
+def isToBeConvertedToFullwidthRight(font, glyph):
+	if font[glyph].unicode == 0x2018:
+		return True
+	elif font[glyph].unicode == 0x201c:
+		return True
+	else:
+		return False
+
 # Inconsolataの読み込み、サイズ調整、諸設定
 font = fontforge.open(argv[2])
-tmpname = font.fontname.replace("InconsolataLGC", "SampuIshiGothic")
+tmpname = font.fontname.replace("InconsolataLGC", "SampuIwaGothic" if iwaFont else "SampuIshiGothic")
 font.fontname = tmpname
-tmpname = font.fullname.replace("Inconsolata LGC", "Sampu Ishi Gothic")
+tmpname = font.fullname.replace("Inconsolata LGC", "Sampu Iwa Gothic" if iwaFont else "Sampu Ishi Gothic")
 font.fullname = tmpname
-font.familyname = "Sampu Ishi Gothic"
+font.familyname = "Sampu Iwa Gothic" if iwaFont else "Sampu Ishi Gothic"
 font.em = 1000
 font.ascent = 820
 font.descent = 180
@@ -43,19 +133,19 @@ font.sfntRevision = None
 
 # 日本語のフォント名
 subFamily = [(x, y, z) for x, y, z in font.sfnt_names if x == "English (US)" and y == "SubFamily"][0][2]
-font.appendSFNTName("Japanese", "Family", "算譜石ゴシック")
+font.appendSFNTName("Japanese", "Family", "算譜岩ゴシック" if iwaFont else "算譜石ゴシック")
 if subFamily == "Regular":
 	font.appendSFNTName("Japanese", "SubFamily", "標準")
-	font.appendSFNTName("Japanese", "Fullname", "算譜石ゴシック")
+	font.appendSFNTName("Japanese", "Fullname", "算譜岩ゴシック" if iwaFont else "算譜石ゴシック")
 elif subFamily == "Italic":
 	font.appendSFNTName("Japanese", "SubFamily", "斜体")
-	font.appendSFNTName("Japanese", "Fullname", "算譜石ゴシック 斜体")
+	font.appendSFNTName("Japanese", "Fullname", "算譜岩ゴシック 斜体" if iwaFont else "算譜石ゴシック 斜体")
 elif subFamily == "Bold":
 	font.appendSFNTName("Japanese", "SubFamily", "太字")
-	font.appendSFNTName("Japanese", "Fullname", "算譜石ゴシック 太字")
+	font.appendSFNTName("Japanese", "Fullname", "算譜岩ゴシック 太字" if iwaFont else "算譜石ゴシック 太字")
 elif subFamily == "Bold Italic":
 	font.appendSFNTName("Japanese", "SubFamily", "太字斜体")
-	font.appendSFNTName("Japanese", "Fullname", "算譜石ゴシック 太字斜体")
+	font.appendSFNTName("Japanese", "Fullname", "算譜岩ゴシック 太字斜体" if iwaFont else "算譜石ゴシック 太字斜体")
 
 # 丸数字と一部の記号を除去
 rejected_glyphs = set()
@@ -64,16 +154,31 @@ for glyph in font:
 		rejected_glyphs.add(glyph)
 	elif re.search(r'\.smallnarrow', glyph):
 		rejected_glyphs.add(glyph)
-	elif 0x25a0 <= font[glyph].unicode <= 0x25af:
-		rejected_glyphs.add(glyph)
-	elif 0x25b2 <= font[glyph].unicode <= 0x25c9:
-		rejected_glyphs.add(glyph)
-	elif 0x25cb <= font[glyph].unicode <= 0x25cf:
-		rejected_glyphs.add(glyph)
-	elif 0x2605 <= font[glyph].unicode <= 0x2606:
-		rejected_glyphs.add(glyph)
-	elif 0x2640 <= font[glyph].unicode <= 0x266f:
-		rejected_glyphs.add(glyph)
+	elif iwaFont:
+		if isToBeConvertedToFullwidth(font, glyph):
+			rejected_glyphs.add(glyph)
+		elif isToBeConvertedToFullwidthLeft(font, glyph):
+			rejected_glyphs.add(glyph)
+		elif isToBeConvertedToFullwidthRight(font, glyph):
+			rejected_glyphs.add(glyph)
+		elif 0x2500 <= font[glyph].unicode <= 0x257f: # 罫線素片
+			rejected_glyphs.add(glyph)
+		elif 0x25a0 <= font[glyph].unicode <= 0x25ab: # 幾何学模様
+			rejected_glyphs.add(glyph)
+		elif 0x25b2 <= font[glyph].unicode <= 0x25b9: # 幾何学模様
+			rejected_glyphs.add(glyph)
+		elif 0x25bb <= font[glyph].unicode <= 0x25c3: # 幾何学模様
+			rejected_glyphs.add(glyph)
+		elif 0x25c5 <= font[glyph].unicode <= 0x25c9: # 幾何学模様
+			rejected_glyphs.add(glyph)
+		elif 0x25cb <= font[glyph].unicode <= 0x25cf: # 幾何学模様
+			rejected_glyphs.add(glyph)
+		elif 0x2605 <= font[glyph].unicode <= 0x2606: # 星印
+			rejected_glyphs.add(glyph)
+		elif 0x2640 <= font[glyph].unicode <= 0x2642: # 雌雄記号
+			rejected_glyphs.add(glyph)
+		elif 0x2660 <= font[glyph].unicode <= 0x266f: # トランプのスート
+			rejected_glyphs.add(glyph)
 for glyph in rejected_glyphs:
 	font.removeGlyph(glyph)
 
@@ -99,6 +204,7 @@ fixUni(genseki, 0x6713, 0x6713, False)
 fixUni(genseki, 0x8c5c, 0x8c63, False)
 fixUni(genseki, 0x8eff, 0x8f27, False)
 fixUni(genseki, 0x9203, 0x9292, False)
+fixUni(genseki, 0x02bb, 0x2018, False)
 genseki.encoding = "UnicodeFull"
 
 # グリフの変更
@@ -124,6 +230,18 @@ for glyph in patchFont:
 	genseki.selection.select(glyph)
 	genseki.paste()
 patchFont.close(); patchFont = None
+
+# ギリシア・ロシア・一部の記号
+for glyph in genseki:
+	paddingWidth = 1000 - genseki[glyph].width
+	if isToBeConvertedToFullwidth(genseki, glyph):
+		genseki[glyph].left_side_bearing = genseki[glyph].left_side_bearing + (paddingWidth // 2)
+		genseki[glyph].width = 1000
+	elif isToBeConvertedToFullwidthLeft(genseki, glyph):
+		genseki[glyph].width = 1000
+	elif isToBeConvertedToFullwidthRight(genseki, glyph):
+		genseki[glyph].left_side_bearing = genseki[glyph].left_side_bearing + paddingWidth
+		genseki[glyph].width = 1000
 
 # 源石ゴシックVer2で仮名の幅が正しくなくなっているので直す
 for glyph in genseki:
@@ -195,7 +313,7 @@ genseki.intersect()
 
 # サイズ調整
 for w in (500, 1000):
-	selectGlyphsWorthOutputting(genseki, lambda glyph: glyph.width == w)
+	selectGlyphsWorthOutputting(genseki, lambda glyph: glyph.width == w and glyph.unicode not in range(0x2500, 0x2580))
 	genseki.transform(psMat.scale(font.ascent / genseki.ascent), ("round", "noWidth"))
 	genseki.transform(psMat.translate(w * (1 - font.ascent / genseki.ascent) / 2), ("round", "noWidth"))
 
@@ -217,7 +335,7 @@ for glyph in genseki:
 		genseki[glyph].glyphclass = "baseglyph"
 
 # サイズ調整（Ricty Diminishedと同様）
-selectGlyphsWorthOutputting(genseki)
+selectGlyphsWorthOutputting(genseki, lambda glyph: glyph.unicode not in range(0x2500, 0x2580))
 genseki.transform(psMat.compose(psMat.scale(0.95), psMat.translate(10, 0)), ('noWidth', 'round'))
 
 # 統合
