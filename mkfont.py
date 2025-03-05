@@ -342,5 +342,8 @@ genseki.transform(psMat.compose(psMat.scale(0.95), psMat.translate(10, 0)), ('no
 font.mergeFonts(genseki)
 font.encoding = "UnicodeFull"
 
+# `aalt`機能を更新
+font.buildOrReplaceAALTFeatures()
+
 # 出力
 font.generate(argv[1])
