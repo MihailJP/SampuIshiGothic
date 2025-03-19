@@ -10,10 +10,13 @@ def selectGlyphsWorthOutputting(font, f = lambda _: True):
 		if font[glyph].isWorthOutputting() and f(font[glyph]):
 			font.selection.select(("more",), glyph)
 
-blockElements = set(range(0x2500, 0x25a0)) \
+blockElements = {0x2429} \
+	| set(range(0x2500, 0x25a0)) \
 	| set(range(0x25e2, 0x25e6)) \
 	| set(range(0xe0b0, 0xe0b4)) \
-	| set(range(0x1fb00, 0x1fbaf))
+	| set(range(0x1cd00, 0x1ceb0)) \
+	| set(range(0x1cc21, 0x1cc30)) \
+	| set(range(0x1fb00, 0x1fbf0))
 
 iwaFont = bool(re.search("SampuIwaGothic", argv[1]))
 
