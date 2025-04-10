@@ -210,6 +210,13 @@ fixUni(genseki, 0x9203, 0x9292, False)
 fixUni(genseki, 0x02bb, 0x2018, False)
 genseki.encoding = "UnicodeFull"
 
+# Lookupの追加
+genseki.addLookup("Stylistic Kana alternates", 'gsub_single', None, (('salt', (('kana', ('dflt',)),)),))
+genseki.addLookupSubtable("Stylistic Kana alternates", "Stylistic Hiragana alternates")
+genseki.addLookup("Historical Kana", 'gsub_alternate', None, (('hist', (('kana', ('dflt',)),)),))
+genseki.addLookupSubtable("Historical Kana", "Historical Katakana")
+#genseki.addLookupSubtable("Historical Kana", "Hiragana to Hentaigana")
+
 # グリフの変更
 def searchLookup(font, otTag, scriptCode):
 	for lookup in font.gsub_lookups:
@@ -230,6 +237,14 @@ for glyph in patchFont:
 			lookup = searchLookup(genseki, 'ccmp', 'kana')
 			subtable = genseki.getLookupSubtables(lookup)[0]
 			genseki[glyph].addPosSub(subtable, glyphPattern.group(1, 2))
+		# 「し」「そ」の異体字
+		glyphPattern = re.search(r'^(uni30[0-9A-F]{2})\.salt$', glyph, re.A)
+		if glyphPattern:
+			genseki[glyphPattern.group(1)].addPosSub("Stylistic Hiragana alternates", glyph)
+		# 「ネ」「ヰ」の異体字
+		glyphPattern = re.search(r'^(uni30[0-9A-F]{2})\.hist$', glyph, re.A)
+		if glyphPattern:
+			genseki[glyphPattern.group(1)].addPosSub("Historical Katakana", glyph)
 	genseki.selection.select(glyph)
 	genseki.paste()
 patchFont.close(); patchFont = None
@@ -329,7 +344,8 @@ if font.italicangle != 0:
 for lookup in genseki.gpos_lookups:
 	genseki.removeLookup(lookup)
 for lookup in genseki.gsub_lookups:
-	if lookup.find("jp78") == lookup.find("jp83") == lookup.find("jp90") == lookup.find("nlck") == lookup.find("ccmp") == -1:
+	if lookup.find("jp78") == lookup.find("jp83") == lookup.find("jp90") == lookup.find("nlck") == lookup.find("ccmp") == -1 \
+	and lookup != "Stylistic Kana alternates" and lookup != "Historical Kana":
 		genseki.removeLookup(lookup)
 
 # OTFグリフクラス（ワークアラウンド）
