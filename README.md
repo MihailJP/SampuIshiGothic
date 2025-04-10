@@ -4,7 +4,7 @@
 プログラミング用フォント [Inconsolata LGC](https://github.com/MihailJP/Inconsolata-LGC) に、
 [源石ゴシック](https://github.com/ButTaiwan/genseki-font) を元にした日本語グリフを追加したものです。
 
-変体仮名のグリフは、[しょかき変体仮名ゴチック](https://booth.pm/ja/items/5633978)に由来します。
+変体仮名のグリフは、一部を除き[しょかき変体仮名ゴチック](https://booth.pm/ja/items/5633978)に由来します。
 
 日本語グリフの特徴 (源石ゴシックからの変更点)
 ---------------------------------------------
