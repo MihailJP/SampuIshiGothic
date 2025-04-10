@@ -37,7 +37,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 0
 CreationTime: 1586687987
-ModificationTime: 1744299760
+ModificationTime: 1744302211
 PfmFamily: 17
 TTFWeight: 400
 TTFWidth: 5
@@ -21054,44 +21054,8 @@ EndSplineSet
 Colour: ff0000
 EndChar
 
-StartChar: u1B09E
-Encoding: 282 110750 282
-Width: 1000
-Flags: W
-LayerCount: 2
-Fore
-SplineSet
-319 688 m 1,0,1
- 319 688 319 688 408 680 c 2,2,3
- 408 678 408 678 404.5 655 c 128,-1,4
- 401 632 401 632 395 611 c 0,5,6
- 391 596 391 596 385 565 c 128,-1,7
- 379 534 379 534 375 522 c 0,8,9
- 373 517 373 517 369.5 505.5 c 128,-1,10
- 366 494 366 494 362 478 c 128,-1,11
- 358 462 358 462 354 451 c 0,12,13
- 317 345 317 345 255 226 c 0,14,15
- 196 107 196 107 136 26 c 1,16,17
- 136 26 136 26 58 67 c 1,18,19
- 116 137 116 137 176 241 c 0,20,21
- 235 346 235 346 271 441 c 0,22,23
- 284 476 284 476 296 515 c 0,24,25
- 316 591 316 591 319 688 c 1,0,1
-652 645 m 1,26,27
- 710 581 710 581 800 392 c 0,28,29
- 832 325 832 325 866 224 c 0,30,31
- 901 123 901 123 914 58 c 1,32,33
- 914 58 914 58 837 26 c 1,34,35
- 821 96 821 96 787 200 c 0,36,37
- 753 303 753 303 723 369 c 0,38,39
- 639 551 639 551 577 617 c 1,40,41
- 577 617 577 617 652 645 c 1,26,27
-EndSplineSet
-Colour: ff0000
-EndChar
-
 StartChar: u1B0A0
-Encoding: 283 110752 283
+Encoding: 282 110752 282
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -21268,7 +21232,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0A1
-Encoding: 284 110753 284
+Encoding: 283 110753 283
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -21381,7 +21345,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0A2
-Encoding: 285 110754 285
+Encoding: 284 110754 284
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -21520,7 +21484,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0A3
-Encoding: 286 110755 286
+Encoding: 285 110755 285
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -21623,7 +21587,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0A4
-Encoding: 287 110756 287
+Encoding: 286 110756 286
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -21749,7 +21713,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0A5
-Encoding: 288 110757 288
+Encoding: 287 110757 287
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -21834,7 +21798,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0A7
-Encoding: 289 110759 289
+Encoding: 288 110759 288
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -21962,7 +21926,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0A8
-Encoding: 290 110760 290
+Encoding: 289 110760 289
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -22120,7 +22084,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0A9
-Encoding: 291 110761 291
+Encoding: 290 110761 290
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -22216,7 +22180,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0AA
-Encoding: 292 110762 292
+Encoding: 291 110762 291
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -22282,7 +22246,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0AB
-Encoding: 293 110763 293
+Encoding: 292 110763 292
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -22356,7 +22320,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0AC
-Encoding: 294 110764 294
+Encoding: 293 110764 293
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -22481,7 +22445,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0AD
-Encoding: 295 110765 295
+Encoding: 294 110765 294
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -22605,7 +22569,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0AE
-Encoding: 296 110766 296
+Encoding: 295 110766 295
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -22764,7 +22728,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0B0
-Encoding: 297 110768 297
+Encoding: 296 110768 296
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -22826,7 +22790,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0B2
-Encoding: 298 110770 298
+Encoding: 297 110770 297
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -22941,7 +22905,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0B3
-Encoding: 299 110771 299
+Encoding: 298 110771 298
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -23048,7 +23012,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0B4
-Encoding: 300 110772 300
+Encoding: 299 110772 299
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -23225,7 +23189,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0B5
-Encoding: 301 110773 301
+Encoding: 300 110773 300
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -23352,7 +23316,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0B8
-Encoding: 302 110776 302
+Encoding: 301 110776 301
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -23471,7 +23435,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0BA
-Encoding: 303 110778 303
+Encoding: 302 110778 302
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -23606,7 +23570,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0BB
-Encoding: 304 110779 304
+Encoding: 303 110779 303
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -23722,7 +23686,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0BC
-Encoding: 305 110780 305
+Encoding: 304 110780 304
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -23833,7 +23797,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0BD
-Encoding: 306 110781 306
+Encoding: 305 110781 305
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -23937,7 +23901,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0BE
-Encoding: 307 110782 307
+Encoding: 306 110782 306
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -24098,7 +24062,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0BF
-Encoding: 308 110783 308
+Encoding: 307 110783 307
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -24174,7 +24138,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0C1
-Encoding: 309 110785 309
+Encoding: 308 110785 308
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -24310,7 +24274,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0C2
-Encoding: 310 110786 310
+Encoding: 309 110786 309
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -24400,7 +24364,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0C3
-Encoding: 311 110787 311
+Encoding: 310 110787 310
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -24493,7 +24457,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0C4
-Encoding: 312 110788 312
+Encoding: 311 110788 311
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -24570,7 +24534,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0C6
-Encoding: 313 110790 313
+Encoding: 312 110790 312
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -24672,7 +24636,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0C7
-Encoding: 314 110791 314
+Encoding: 313 110791 313
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -24785,7 +24749,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0C8
-Encoding: 315 110792 315
+Encoding: 314 110792 314
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -24898,7 +24862,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0C9
-Encoding: 316 110793 316
+Encoding: 315 110793 315
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -24939,7 +24903,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0CA
-Encoding: 317 110794 317
+Encoding: 316 110794 316
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -25044,7 +25008,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0CB
-Encoding: 318 110795 318
+Encoding: 317 110795 317
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -25139,7 +25103,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0CC
-Encoding: 319 110796 319
+Encoding: 318 110796 318
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -25249,7 +25213,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0CF
-Encoding: 320 110799 320
+Encoding: 319 110799 319
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -25308,7 +25272,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0D0
-Encoding: 321 110800 321
+Encoding: 320 110800 320
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -25425,7 +25389,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0D2
-Encoding: 322 110802 322
+Encoding: 321 110802 321
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -25534,7 +25498,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0D3
-Encoding: 323 110803 323
+Encoding: 322 110803 322
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -25674,7 +25638,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0D5
-Encoding: 324 110805 324
+Encoding: 323 110805 323
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -25759,7 +25723,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0D6
-Encoding: 325 110806 325
+Encoding: 324 110806 324
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -25843,7 +25807,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0D7
-Encoding: 326 110807 326
+Encoding: 325 110807 325
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -25936,7 +25900,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0D8
-Encoding: 327 110808 327
+Encoding: 326 110808 326
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -26017,7 +25981,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0D9
-Encoding: 328 110809 328
+Encoding: 327 110809 327
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -26095,7 +26059,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0DB
-Encoding: 329 110811 329
+Encoding: 328 110811 328
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -26192,7 +26156,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0DD
-Encoding: 330 110813 330
+Encoding: 329 110813 329
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -26266,7 +26230,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0DF
-Encoding: 331 110815 331
+Encoding: 330 110815 330
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -26390,7 +26354,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0E0
-Encoding: 332 110816 332
+Encoding: 331 110816 331
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -26506,7 +26470,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0E1
-Encoding: 333 110817 333
+Encoding: 332 110817 332
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -26608,7 +26572,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0E2
-Encoding: 334 110818 334
+Encoding: 333 110818 333
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -26755,7 +26719,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0E3
-Encoding: 335 110819 335
+Encoding: 334 110819 334
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -26875,7 +26839,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0E4
-Encoding: 336 110820 336
+Encoding: 335 110820 335
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -26943,94 +26907,8 @@ EndSplineSet
 Colour: ff0000
 EndChar
 
-StartChar: u1B0E5
-Encoding: 337 110821 337
-Width: 1000
-Flags: W
-LayerCount: 2
-Fore
-SplineSet
-487 754 m 0,0,1
- 506 754 506 754 522 751 c 0,2,3
- 567 742 567 742 597 710 c 0,4,5
- 626 680 626 680 638 633 c 0,6,7
- 639 629 639 629 641 619.5 c 128,-1,8
- 643 610 643 610 643 609 c 0,9,10
- 746 593 746 593 810 529 c 0,11,12
- 899 441 899 441 899 312 c 0,13,14
- 899 170 899 170 812 76 c 0,15,16
- 726 -16 726 -16 565 -16 c 1,17,18
- 565 -16 565 -16 530 -12 c 2,19,20
- 475 -2 475 -2 444 10 c 0,21,22
- 385 34 385 34 343 74.5 c 128,-1,23
- 301 115 301 115 266 182 c 0,24,25
- 265 184 265 184 262.5 189 c 128,-1,26
- 260 194 260 194 258 197 c 0,27,28
- 241 226 241 226 227 274 c 0,29,30
- 220 298 220 298 220 342 c 1,31,32
- 202 325 202 325 180 304 c 1,33,34
- 180 304 180 304 131 329 c 1,35,36
- 91 397 91 397 69 472 c 1,37,38
- 69 472 69 472 135 510 c 1,39,40
- 145 476 145 476 152 458.5 c 128,-1,41
- 159 441 159 441 178 412 c 1,42,43
- 193 426 193 426 224 453 c 1,44,45
- 226 463 226 463 228 473 c 0,46,47
- 244 570 244 570 291 638 c 0,48,49
- 330 695 330 695 383 725 c 0,50,51
- 427 752 427 752 482 754 c 0,52,53
- 485 754 485 754 487 754 c 0,0,1
-472 676 m 0,54,55
- 419 675 419 675 380 633 c 0,56,57
- 349 606 349 606 324 548 c 0,58,59
- 320 539 320 539 317 530 c 1,60,61
- 398 587 398 587 496 606 c 0,62,63
- 534 613 534 613 562 614 c 1,64,65
- 555 635 555 635 549 642 c 0,66,67
- 529 667 529 667 497 673 c 0,68,69
- 484 676 484 676 472 676 c 0,54,55
-574 537 m 1,70,71
- 536 535 536 535 504 530 c 0,72,73
- 415 514 415 514 340 455 c 0,74,75
- 335 451 335 451 321 440.5 c 128,-1,76
- 307 430 307 430 298 423 c 0,77,78
- 298 418 298 418 294.5 402.5 c 128,-1,79
- 291 387 291 387 291 380 c 0,80,81
- 296 300 296 300 327 238 c 0,82,83
- 356 174 356 174 391.5 136.5 c 128,-1,84
- 427 99 427 99 476 81 c 0,85,86
- 520 67 520 67 565 65 c 0,87,88
- 682 66 682 66 749 130 c 0,89,90
- 819 198 819 198 819 308 c 0,91,92
- 819 402 819 402 756 470 c 0,93,94
- 715 513 715 513 650 529 c 1,95,96
- 650 521 650 521 649 513 c 0,97,98
- 645 464 645 464 624 405 c 0,99,100
- 614 379 614 379 603 363.5 c 128,-1,101
- 592 348 592 348 566 327 c 0,102,103
- 552 314 552 314 546.5 303.5 c 128,-1,104
- 541 293 541 293 549 287 c 0,105,106
- 553 285 553 285 558 284 c 0,107,108
- 560 284 560 284 587 284 c 0,109,110
- 601 284 601 284 614.5 285.5 c 128,-1,111
- 628 287 628 287 637 289.5 c 128,-1,112
- 646 292 646 292 660 295.5 c 128,-1,113
- 674 299 674 299 681 300 c 1,114,115
- 681 300 681 300 691 226 c 1,116,117
- 610 209 610 209 558 209 c 0,118,119
- 516 209 516 209 491 234 c 0,120,121
- 478 249 478 249 472.5 267 c 128,-1,122
- 467 285 467 285 478 319 c 128,-1,123
- 489 353 489 353 525 390 c 0,124,125
- 556 427 556 427 566 467 c 0,126,127
- 570 485 570 485 572 502 c 0,128,129
- 574 521 574 521 574 537 c 1,70,71
-EndSplineSet
-Colour: ff0000
-EndChar
-
 StartChar: u1B0E7
-Encoding: 338 110823 338
+Encoding: 336 110823 336
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -27116,7 +26994,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0E8
-Encoding: 339 110824 339
+Encoding: 337 110824 337
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -27228,7 +27106,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0E9
-Encoding: 340 110825 340
+Encoding: 338 110825 338
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -27294,7 +27172,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0EA
-Encoding: 341 110826 341
+Encoding: 339 110826 339
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -27359,7 +27237,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0EB
-Encoding: 342 110827 342
+Encoding: 340 110827 340
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -27415,7 +27293,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0EC
-Encoding: 343 110828 343
+Encoding: 341 110828 341
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -27531,7 +27409,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0EE
-Encoding: 344 110830 344
+Encoding: 342 110830 342
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -27620,7 +27498,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0EF
-Encoding: 345 110831 345
+Encoding: 343 110831 343
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -27687,7 +27565,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0F1
-Encoding: 346 110833 346
+Encoding: 344 110833 344
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -27781,7 +27659,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0F2
-Encoding: 347 110834 347
+Encoding: 345 110834 345
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -27850,7 +27728,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0F3
-Encoding: 348 110835 348
+Encoding: 346 110835 346
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -27967,7 +27845,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0F4
-Encoding: 349 110836 349
+Encoding: 347 110836 347
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -28076,7 +27954,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0F5
-Encoding: 350 110837 350
+Encoding: 348 110837 348
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -28212,7 +28090,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0F6
-Encoding: 351 110838 351
+Encoding: 349 110838 349
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -28296,7 +28174,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0F7
-Encoding: 352 110839 352
+Encoding: 350 110839 350
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -28482,7 +28360,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0F8
-Encoding: 353 110840 353
+Encoding: 351 110840 351
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -28589,7 +28467,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0F9
-Encoding: 354 110841 354
+Encoding: 352 110841 352
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -28719,7 +28597,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0FA
-Encoding: 355 110842 355
+Encoding: 353 110842 353
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -28801,7 +28679,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0FC
-Encoding: 356 110844 356
+Encoding: 354 110844 354
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -28887,7 +28765,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0FE
-Encoding: 357 110846 357
+Encoding: 355 110846 355
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -29045,7 +28923,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0FF
-Encoding: 358 110847 358
+Encoding: 356 110847 356
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -29133,7 +29011,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B100
-Encoding: 359 110848 359
+Encoding: 357 110848 357
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -29237,7 +29115,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B101
-Encoding: 360 110849 360
+Encoding: 358 110849 358
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -29393,7 +29271,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B102
-Encoding: 361 110850 361
+Encoding: 359 110850 359
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -29464,7 +29342,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B103
-Encoding: 362 110851 362
+Encoding: 360 110851 360
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -29536,7 +29414,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B104
-Encoding: 363 110852 363
+Encoding: 361 110852 361
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -29650,7 +29528,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B105
-Encoding: 364 110853 364
+Encoding: 362 110853 362
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -29855,7 +29733,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B106
-Encoding: 365 110854 365
+Encoding: 363 110854 363
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -29975,7 +29853,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B107
-Encoding: 366 110855 366
+Encoding: 364 110855 364
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -30146,7 +30024,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B108
-Encoding: 367 110856 367
+Encoding: 365 110856 365
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -30278,7 +30156,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B109
-Encoding: 368 110857 368
+Encoding: 366 110857 366
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -30378,7 +30256,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B10A
-Encoding: 369 110858 369
+Encoding: 367 110858 367
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -30438,7 +30316,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B10B
-Encoding: 370 110859 370
+Encoding: 368 110859 368
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -30511,7 +30389,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B10C
-Encoding: 371 110860 371
+Encoding: 369 110860 369
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -30581,7 +30459,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B10D
-Encoding: 372 110861 372
+Encoding: 370 110861 370
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -30667,7 +30545,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B10E
-Encoding: 373 110862 373
+Encoding: 371 110862 371
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -30728,7 +30606,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B10F
-Encoding: 374 110863 374
+Encoding: 372 110863 372
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -30806,7 +30684,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B110
-Encoding: 375 110864 375
+Encoding: 373 110864 373
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -30898,7 +30776,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B111
-Encoding: 376 110865 376
+Encoding: 374 110865 374
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -30991,7 +30869,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B112
-Encoding: 377 110866 377
+Encoding: 375 110866 375
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -31116,7 +30994,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B113
-Encoding: 378 110867 378
+Encoding: 376 110867 376
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -31233,7 +31111,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B114
-Encoding: 379 110868 379
+Encoding: 377 110868 377
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -31371,7 +31249,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B115
-Encoding: 380 110869 380
+Encoding: 378 110869 378
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -31504,7 +31382,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B116
-Encoding: 381 110870 381
+Encoding: 379 110870 379
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -31586,7 +31464,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B117
-Encoding: 382 110871 382
+Encoding: 380 110871 380
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -31650,7 +31528,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B118
-Encoding: 383 110872 383
+Encoding: 381 110872 381
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -31748,7 +31626,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B119
-Encoding: 384 110873 384
+Encoding: 382 110873 382
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -31864,7 +31742,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B11B
-Encoding: 385 110875 385
+Encoding: 383 110875 383
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -31955,7 +31833,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B11C
-Encoding: 386 110876 386
+Encoding: 384 110876 384
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -32025,7 +31903,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B11D
-Encoding: 387 110877 387
+Encoding: 385 110877 385
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -32120,7 +31998,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B11E
-Encoding: 388 110878 388
+Encoding: 386 110878 386
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -32196,7 +32074,7 @@ Colour: ff0000
 EndChar
 
 StartChar: u1B0CD
-Encoding: 389 110797 389
+Encoding: 387 110797 387
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -32252,7 +32130,7 @@ Colour: ffff00
 EndChar
 
 StartChar: u1B0F0
-Encoding: 390 110832 390
+Encoding: 388 110832 388
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -32284,7 +32162,7 @@ Colour: ffff00
 EndChar
 
 StartChar: u1B0FB
-Encoding: 391 110843 391
+Encoding: 389 110843 389
 Width: 1000
 Flags: W
 LayerCount: 2
@@ -32294,12 +32172,12 @@ SplineSet
  802 511 802 511 749 576 c 0,2,3
  722 609 722 609 683.5 631.5 c 128,-1,4
  645 654 645 654 602 654 c 0,5,6
- 462 654 462 654 160 530 c 0,7,8
- 140 522 140 522 133 519 c 1,9,-1
- 116 561 l 1,10,-1
- 99 603 l 1,11,12
- 151 614 151 614 202 631 c 0,13,14
- 212 634 212 634 238 643 c 0,15,16
+ 462 654 462 654 160 530 c 4,7,8
+ 140 522 140 522 133 519 c 5,9,-1
+ 116 561 l 5,10,-1
+ 99 603 l 5,11,12
+ 151 614 151 614 202 631 c 4,13,14
+ 212 634 212 634 238 643 c 4,15,16
  345 679 345 679 410 696 c 0,17,18
  525 726 525 726 603 726 c 0,19,20
  708 726 708 726 802 634 c 0,21,22
@@ -32325,6 +32203,126 @@ SplineSet
  443 40 443 40 499 40 c 0,43,44
 EndSplineSet
 Colour: ffff00
+EndChar
+
+StartChar: u1B09E
+Encoding: 390 110750 390
+Width: 1000
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+337 442 m 1,0,1
+ 400 527 400 527 457.5 571 c 128,-1,2
+ 515 615 515 615 580 615 c 0,3,4
+ 612 615 612 615 641 603 c 128,-1,5
+ 670 591 670 591 695.5 563.5 c 128,-1,6
+ 721 536 721 536 742 508.5 c 128,-1,7
+ 763 481 763 481 785 432.5 c 128,-1,8
+ 807 384 807 384 821.5 349 c 128,-1,9
+ 836 314 836 314 856 252 c 128,-1,10
+ 876 190 876 190 886.5 155 c 128,-1,11
+ 897 120 897 120 916 53 c 0,12,13
+ 919 41 919 41 921 36 c 1,14,-1
+ 843 16 l 1,15,16
+ 759 401 759 401 651 510 c 0,17,18
+ 616 545 616 545 580 545 c 0,19,20
+ 559 545 559 545 537.5 536 c 128,-1,21
+ 516 527 516 527 497 513.5 c 128,-1,22
+ 478 500 478 500 453 472.5 c 128,-1,23
+ 428 445 428 445 408 419.5 c 128,-1,24
+ 388 394 388 394 356.5 348 c 128,-1,25
+ 325 302 325 302 301.5 265.5 c 128,-1,26
+ 278 229 278 229 239 166 c 0,27,28
+ 225 142 225 142 194.5 92.5 c 128,-1,29
+ 164 43 164 43 151 20 c 1,30,-1
+ 84 64 l 1,31,32
+ 93 75 93 75 102 86.5 c 128,-1,33
+ 111 98 111 98 122 114 c 128,-1,34
+ 133 130 133 130 138.5 138.5 c 128,-1,35
+ 144 147 144 147 158.5 170.5 c 128,-1,36
+ 173 194 173 194 178 201 c 0,37,38
+ 273 369 273 369 273 530 c 0,39,40
+ 273 574 273 574 238.5 600.5 c 128,-1,41
+ 204 627 204 627 135 650 c 1,42,43
+ 137 655 137 655 140.5 662 c 128,-1,44
+ 144 669 144 669 151.5 685 c 128,-1,45
+ 159 701 159 701 164 711.5 c 128,-1,46
+ 169 722 169 722 169 722 c 0,47,48
+ 180 715 180 715 212.5 698 c 128,-1,49
+ 245 681 245 681 264.5 668 c 128,-1,50
+ 284 655 284 655 298 640 c 0,51,52
+ 343 595 343 595 343 530 c 0,53,54
+ 343 485 343 485 337 442 c 1,0,1
+EndSplineSet
+Colour: 80ff00
+EndChar
+
+StartChar: u1B0E5
+Encoding: 391 110821 391
+Width: 1000
+Flags: W
+LayerCount: 2
+Fore
+SplineSet
+485 695 m 0,0,1
+ 356 695 356 695 307 532 c 0,2,3
+ 303 518 303 518 300 503 c 1,4,5
+ 438 582 438 582 563 600 c 1,6,7
+ 553 653 553 653 529 677 c 0,8,9
+ 511 695 511 695 485 695 c 0,0,1
+638 535 m 0,10,11
+ 637 492 637 492 622.5 447 c 128,-1,12
+ 608 402 608 402 594 376 c 128,-1,13
+ 580 350 580 350 551 303 c 1,14,15
+ 650 309 650 309 673 315 c 1,16,-1
+ 677 235 l 1,17,18
+ 642 238 642 238 578 234.5 c 128,-1,19
+ 514 231 514 231 493 225 c 1,20,-1
+ 455 284 l 1,21,22
+ 460 289 460 289 494 343 c 0,23,24
+ 517 381 517 381 529 404 c 128,-1,25
+ 541 427 541 427 553.5 462 c 128,-1,26
+ 566 497 566 497 568 530 c 1,27,28
+ 442 511 442 511 286 413 c 1,29,30
+ 282 373 282 373 282 330 c 0,31,32
+ 282 305 282 305 284 282.5 c 128,-1,33
+ 286 260 286 260 292.5 230.5 c 128,-1,34
+ 299 201 299 201 310 177 c 128,-1,35
+ 321 153 321 153 340.5 128.5 c 128,-1,36
+ 360 104 360 104 386 87 c 128,-1,37
+ 412 70 412 70 451.5 59.5 c 128,-1,38
+ 491 49 491 49 539 49 c 0,39,40
+ 618 49 618 49 688 83 c 128,-1,41
+ 758 117 758 117 802 180.5 c 128,-1,42
+ 846 244 846 244 846 322 c 0,43,44
+ 846 409 846 409 785.5 472 c 128,-1,45
+ 725 535 725 535 639 535 c 0,46,47
+ 639 535 639 535 638 535 c 0,10,11
+213 364 m 1,48,49
+ 140 314 140 314 125 299 c 1,50,51
+ 122 303 122 303 117.5 310 c 128,-1,52
+ 113 317 113 317 103.5 331.5 c 128,-1,53
+ 94 346 94 346 87.5 355.5 c 128,-1,54
+ 81 365 81 365 81 365 c 0,55,56
+ 90 367 90 367 111 380.5 c 128,-1,57
+ 132 394 132 394 169 419.5 c 128,-1,58
+ 206 445 206 445 220 454 c 1,59,60
+ 242 620 242 620 322 699 c 0,61,62
+ 388 765 388 765 485 765 c 0,63,64
+ 541 765 541 765 581 724 c 128,-1,65
+ 621 683 621 683 633 605 c 0,66,67
+ 636 605 636 605 639 605 c 0,68,69
+ 754 605 754 605 835 521.5 c 128,-1,70
+ 916 438 916 438 916 322 c 0,71,72
+ 916 226 916 226 863.5 146.5 c 128,-1,73
+ 811 67 811 67 724.5 23 c 128,-1,74
+ 638 -21 638 -21 539 -21 c 0,75,76
+ 389 -21 389 -21 303 64 c 0,77,78
+ 212 155 212 155 212 330 c 0,79,80
+ 212 347 212 347 213 364 c 1,48,49
+EndSplineSet
+Colour: 80ff00
 EndChar
 EndChars
 EndSplineFont

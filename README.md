@@ -29,6 +29,7 @@ Version \(TBD\) では変体仮名を追加しました。変体仮名フォン�
 - A: [しょかき変体仮名ゴチック](https://booth.pm/ja/items/5633978)に由来するもの（PatchGlyph-*.sfdではオレンジ色でマーク）
 - B: [すきまゴシック](https://booth.pm/ja/items/2117070)に由来するもの（PatchGlyph-*.sfdでは赤でマーク）
 - C: 独自に追加したもの ([源石ゴシック](https://github.com/ButTaiwan/genseki-font)由来)（PatchGlyph-*.sfdでは黄色でマーク）
+- D: [GlyphWiki](https://glyphwiki.org/)由来の骨格をトレースして追加したもの（PatchGlyph-*.sfdでは黄緑色でマーク）
 
 #### 仮名補助
 
@@ -43,12 +44,12 @@ Version \(TBD\) では変体仮名を追加しました。変体仮名フォン�
 | U+1B06x | C | B | B | B | B | B | A | B | B | B | B | B | A | A | B | B |
 | U+1B07x | B | B | A | B | B | B | B | B | B | B | B | A | B | B | B | B |
 | U+1B08x | B | C | B | B | B | B | A | B | B | B | B | A | A | B | B | B |
-| U+1B09x | B | A | B | B | A | B | B | B | B | B | B | B | A | B | B | A |
+| U+1B09x | B | A | B | B | A | B | B | B | B | B | B | B | A | B | D | A |
 | U+1B0Ax | B | B | B | B | B | B | A | B | B | B | B | B | B | B | B | A |
 | U+1B0Bx | B | A | B | B | B | B | A | A | B | A | B | B | B | B | B | B |
 | U+1B0Cx | A | B | B | B | B | A | B | B | B | B | B | B | B | C | A | B |
 | U+1B0Dx | B | A | B | B | A | B | B | B | B | B | C | B | A | B | A | B |
-| U+1B0Ex | B | B | B | B | B | B | A | B | B | B | B | B | B | A | B | B |
+| U+1B0Ex | B | B | B | B | B | D | A | B | B | B | B | B | B | A | B | B |
 | U+1B0Fx | C | B | B | B | B | B | B | B | B | B | B | C | B | A | B | B |
 
 #### 仮名拡張A
