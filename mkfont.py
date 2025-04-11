@@ -210,14 +210,7 @@ fixUni(genseki, 0x9203, 0x9292, False)
 fixUni(genseki, 0x02bb, 0x2018, False)
 genseki.encoding = "UnicodeFull"
 
-# Lookupの追加
-genseki.addLookup("Stylistic Kana alternates", 'gsub_single', None, (('salt', (('kana', ('dflt',)),)),))
-genseki.addLookupSubtable("Stylistic Kana alternates", "Stylistic Hiragana alternates")
-genseki.addLookup("Historical Kana", 'gsub_alternate', None, (('hist', (('kana', ('dflt',)),)),))
-genseki.addLookupSubtable("Historical Kana", "Historical Katakana")
-#genseki.addLookupSubtable("Historical Kana", "Hiragana to Hentaigana")
-
-# グリフの変更
+# Lookupを検索
 def searchLookup(font, otTag, scriptCode):
 	for lookup in font.gsub_lookups:
 		for tag, scripts in font.getLookupInfo(lookup)[2]:
@@ -225,6 +218,18 @@ def searchLookup(font, otTag, scriptCode):
 				if tag == otTag and scr == scriptCode:
 					return lookup
 	return None
+
+# Lookupの追加
+lookupForDakuten = searchLookup(genseki, 'ccmp', 'kana')
+subtableForDakuten = genseki.getLookupSubtables(lookupForDakuten)[0]
+genseki.addLookupSubtable(lookupForDakuten, "Hentaigana with dakuten")
+genseki.addLookup("Stylistic Kana alternates", 'gsub_single', None, (('salt', (('kana', ('dflt',)),)),))
+genseki.addLookupSubtable("Stylistic Kana alternates", "Stylistic Hiragana alternates")
+genseki.addLookup("Historical Kana", 'gsub_alternate', None, (('hist', (('kana', ('dflt',)),)),))
+genseki.addLookupSubtable("Historical Kana", "Historical Katakana")
+#genseki.addLookupSubtable("Historical Kana", "Hiragana to Hentaigana")
+
+# グリフの変更
 patchFont = fontforge.open(argv[4])
 for glyph in patchFont:
 	patchFont.selection.select(glyph)
@@ -234,9 +239,10 @@ for glyph in patchFont:
 		# 拡張濁点・半濁点
 		glyphPattern = re.search(r'^(uni30[0-9A-F]{2})_(uni309[9A])\.ccmp$', glyph, re.A)
 		if glyphPattern:
-			lookup = searchLookup(genseki, 'ccmp', 'kana')
-			subtable = genseki.getLookupSubtables(lookup)[0]
-			genseki[glyph].addPosSub(subtable, glyphPattern.group(1, 2))
+			genseki[glyph].addPosSub(subtableForDakuten, glyphPattern.group(1, 2))
+		glyphPattern = re.search(r'^(u1B0[0-9A-F]{2})_(uni309[9A])\.ccmp$', glyph, re.A)
+		if glyphPattern:
+			genseki[glyph].addPosSub("Hentaigana with dakuten", glyphPattern.group(1, 2))
 		# 「し」「そ」の異体字
 		glyphPattern = re.search(r'^(uni30[0-9A-F]{2})\.salt$', glyph, re.A)
 		if glyphPattern:
