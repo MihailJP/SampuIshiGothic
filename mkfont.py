@@ -245,6 +245,9 @@ for glyph in patchFont:
 		glyphPattern = re.search(r'^(uni30[0-9A-F]{2})\.hist$', glyph, re.A)
 		if glyphPattern:
 			genseki[glyphPattern.group(1)].addPosSub("Historical Katakana", glyph)
+		glyphPattern = re.search(r'^(u1B1[0-9A-F]{2})\.hist$', glyph, re.A)
+		if glyphPattern:
+			genseki[glyphPattern.group(1)].addPosSub("Historical Katakana", glyph)
 	genseki.selection.select(glyph)
 	genseki.paste()
 patchFont.close(); patchFont = None
