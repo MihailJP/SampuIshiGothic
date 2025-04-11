@@ -68,3 +68,11 @@ Version \(TBD\) では変体仮名を追加しました。変体仮名フォン�
 ライセンス
 ----------
 このフォントは、[SIL Open Font License Version 1.1](LICENSE) でライセンスされています。
+
+上記「変体仮名グリフの出所」の A と B についても、SIL Open Font License Version 1.1
+でライセンスされています。
+
+同項目の D については、自由に利用可能なライセンスとなっています。
+[GlyphWiki:データ・記事のライセンス][1]をご覧ください。
+
+[1]: https://glyphwiki.org/wiki/GlyphWiki:%e3%83%87%e3%83%bc%e3%82%bf%e3%83%bb%e8%a8%98%e4%ba%8b%e3%81%ae%e3%83%a9%e3%82%a4%e3%82%bb%e3%83%b3%e3%82%b9
