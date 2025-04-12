@@ -378,12 +378,12 @@ for glyph in hiraganaToHentaigana.items():
 for glyph in genseki:
 	paddingWidth = 1000 - genseki[glyph].width
 	if isToBeConvertedToFullwidth(genseki, glyph):
-		genseki[glyph].left_side_bearing = genseki[glyph].left_side_bearing + (paddingWidth // 2)
+		genseki[glyph].left_side_bearing = int(genseki[glyph].left_side_bearing) + (paddingWidth // 2)
 		genseki[glyph].width = 1000
 	elif isToBeConvertedToFullwidthLeft(genseki, glyph):
 		genseki[glyph].width = 1000
 	elif isToBeConvertedToFullwidthRight(genseki, glyph):
-		genseki[glyph].left_side_bearing = genseki[glyph].left_side_bearing + paddingWidth
+		genseki[glyph].left_side_bearing = int(genseki[glyph].left_side_bearing) + paddingWidth
 		genseki[glyph].width = 1000
 
 # 源石ゴシックVer2で仮名の幅が正しくなくなっているので直す
