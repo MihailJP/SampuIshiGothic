@@ -49,7 +49,7 @@ Version 2.4 では変体仮名を追加しました。変体仮名フォント�
 | U+1B0Bx | B | A | B | B | B | B | A | A | B | A | B | B | B | B | B | B |
 | U+1B0Cx | A | B | B | B | B | A | B | B | B | B | B | B | B | C | A | B |
 | U+1B0Dx | B | A | B | B | A | B | B | B | B | B | C | B | A | B | A | B |
-| U+1B0Ex | B | B | B | B | B | D | A | B | B | B | B | B | B | A | B | B |
+| U+1B0Ex | B | B | B | B | B | C | A | B | B | B | B | B | B | A | B | B |
 | U+1B0Fx | C | B | B | B | B | B | B | B | B | B | B | C | B | A | B | B |
 
 #### 仮名拡張A
