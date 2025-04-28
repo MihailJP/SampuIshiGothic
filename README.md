@@ -29,7 +29,6 @@ Version 2.4 では変体仮名を追加しました。変体仮名フォント�
 - A: [しょかき変体仮名ゴチック](https://booth.pm/ja/items/5633978)に由来するもの（PatchGlyph-*.sfdではオレンジ色でマーク）
 - B: [すきまゴシック](https://booth.pm/ja/items/2117070)に由来するもの（PatchGlyph-*.sfdでは赤でマーク）
 - C: 独自に追加したもの ([源石ゴシック](https://github.com/ButTaiwan/genseki-font)由来)（PatchGlyph-*.sfdでは黄色でマーク）
-- D: [GlyphWiki](https://glyphwiki.org/)由来の骨格をトレースして追加したもの（PatchGlyph-*.sfdでは黄緑色でマーク）
 
 #### 仮名補助
 
@@ -44,7 +43,7 @@ Version 2.4 では変体仮名を追加しました。変体仮名フォント�
 | U+1B06x | C | B | B | B | B | B | A | B | B | B | B | B | A | A | B | B |
 | U+1B07x | B | B | A | B | B | B | B | B | B | B | B | A | B | B | B | B |
 | U+1B08x | B | C | B | B | B | B | A | B | B | B | B | A | A | B | B | B |
-| U+1B09x | B | A | B | B | A | B | B | B | B | B | B | B | A | B | D | A |
+| U+1B09x | B | A | B | B | A | B | B | B | B | B | B | B | A | B | B | A |
 | U+1B0Ax | B | B | B | B | B | B | A | B | B | B | B | B | B | B | B | A |
 | U+1B0Bx | B | A | B | B | B | B | A | A | B | A | B | B | B | B | B | B |
 | U+1B0Cx | A | B | B | B | B | A | B | B | B | B | B | B | B | C | A | B |
@@ -71,8 +70,3 @@ Version 2.4 では変体仮名を追加しました。変体仮名フォント�
 
 上記「変体仮名グリフの出所」の A と B についても、SIL Open Font License Version 1.1
 でライセンスされています。
-
-同項目の D については、自由に利用可能なライセンスとなっています。
-[GlyphWiki:データ・記事のライセンス][1]をご覧ください。
-
-[1]: https://glyphwiki.org/wiki/GlyphWiki:%e3%83%87%e3%83%bc%e3%82%bf%e3%83%bb%e8%a8%98%e4%ba%8b%e3%81%ae%e3%83%a9%e3%82%a4%e3%82%bb%e3%83%b3%e3%82%b9
