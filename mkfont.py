@@ -203,7 +203,7 @@ font.copyright = """Copyright (c) 2006 Raph Levien
 Copyright (c) 2010-2012 Dimosthenis Kaponis
 Copyright (c) 2012-2024 MihailJP
 Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'. Source is a trademark of Adobe in the United States and/or other countries."""
-font.version = "2.4.4"
+font.version = "2.4.5"
 font.sfntRevision = None
 
 # 日本語のフォント名
