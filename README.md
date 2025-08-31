@@ -14,6 +14,8 @@
 - 平仮名の「へ」と片仮名の「ヘ」の区別がつきやすいよう、前者を丸くし、後者を尖らせてあります。
 - 区別がつきやすいよう、「ー」（長音）の字形に手を加えました。
 - 片仮名と字形が類似した漢字の「一」、「二」、「力」、「口」、「工」、「卜」にセリフを付けました。
+
+以下は、Version 2.5 以降[源石変体仮名ゴシック](https://github.com/MihailJP/GenSekiHentaiganaGothic)をマージする形となりました。
 - 一部の濁点付き・半濁点付きグリフを追加しました。
 - 小書き仮名拡張 (Small Kana Extension) のグリフ (Unicode 15.0 で登録されている 9 文字) を追加しました。
 - 平安時代の片仮名ア行エ・平仮名や行え（仮名補助にあるもの）を追加しました。
@@ -25,10 +27,12 @@
 ### 変体仮名グリフの出所
 
 Version 2.4 では変体仮名を追加しました。変体仮名フォントはほとんどが明朝体で、ゴシック体は稀です。
+Version 2.5 以降、[源石変体仮名ゴシック](https://github.com/MihailJP/GenSekiHentaiganaGothic)からのインポートとなっていますが、
+これは算譜石ゴシック Version 2.4 の変体仮名から独立させたものです。
 
-- A: [しょかき変体仮名ゴチック](https://booth.pm/ja/items/5633978)に由来するもの（PatchGlyph-*.sfdではオレンジ色でマーク）
-- B: [すきまゴシック](https://booth.pm/ja/items/2117070)に由来するもの（PatchGlyph-*.sfdでは赤でマーク）
-- C: 独自に追加したもの ([源石ゴシック](https://github.com/ButTaiwan/genseki-font)由来)（PatchGlyph-*.sfdでは黄色でマーク）
+- A: [しょかき変体仮名ゴチック](https://booth.pm/ja/items/5633978)に由来するもの
+- B: [すきまゴシック](https://booth.pm/ja/items/2117070)に由来するもの
+- C: 独自に追加したもの ([源石ゴシック](https://github.com/ButTaiwan/genseki-font)由来)
 
 #### 仮名補助
 
