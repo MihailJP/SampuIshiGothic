@@ -12,17 +12,24 @@ all: ${TARGETS} ${TARGETS2}
 
 .INTERMEDIATE: ${TARGETS:.ttf=.ttx} ${TARGETS:.ttf=.raw.ttf} ${TARGETS:.ttf=.raw.ttx}
 .INTERMEDIATE: ${TARGETS2:.ttf=.ttx} ${TARGETS2:.ttf=.raw.ttf} ${TARGETS2:.ttf=.raw.ttx}
+.INTERMEDIATE: PatchGlyph2-Regular.sfd PatchGlyph2-Bold.sfd
 
-SampuIshiGothic.raw.ttf SampuIwaGothic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC.sfd genseki-font/ttc/GenSekiGothic2-R.ttc PatchGlyph-Regular.sfd
+PatchGlyph2-Regular.sfd: GenSekiHentaiganaGothic/GenSekiHentaiganaGothic.sfd PatchGlyph-Regular.sfd
+	./mkpatch.py $@ $^
+
+PatchGlyph2-Bold.sfd: GenSekiHentaiganaGothic/GenSekiHentaiganaGothic-Bold.sfd PatchGlyph-Bold.sfd
+	./mkpatch.py $@ $^
+
+SampuIshiGothic.raw.ttf SampuIwaGothic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC.sfd genseki-font/ttc/GenSekiGothic2-R.ttc PatchGlyph2-Regular.sfd
 	./mkfont.py $@ $^
 
-SampuIshiGothic-Bold.raw.ttf SampuIwaGothic-Bold.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-Bold.sfd genseki-font/ttc/GenSekiGothic2-B.ttc PatchGlyph-Bold.sfd
+SampuIshiGothic-Bold.raw.ttf SampuIwaGothic-Bold.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-Bold.sfd genseki-font/ttc/GenSekiGothic2-B.ttc PatchGlyph2-Bold.sfd
 	./mkfont.py $@ $^
 
-SampuIshiGothic-Italic.raw.ttf SampuIwaGothic-Italic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-Italic.sfd genseki-font/ttc/GenSekiGothic2-R.ttc PatchGlyph-Regular.sfd
+SampuIshiGothic-Italic.raw.ttf SampuIwaGothic-Italic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-Italic.sfd genseki-font/ttc/GenSekiGothic2-R.ttc PatchGlyph2-Regular.sfd
 	./mkfont.py $@ $^
 
-SampuIshiGothic-BoldItalic.raw.ttf SampuIwaGothic-BoldItalic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-BoldItalic.sfd genseki-font/ttc/GenSekiGothic2-B.ttc PatchGlyph-Bold.sfd
+SampuIshiGothic-BoldItalic.raw.ttf SampuIwaGothic-BoldItalic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-BoldItalic.sfd genseki-font/ttc/GenSekiGothic2-B.ttc PatchGlyph2-Bold.sfd
 	./mkfont.py $@ $^
 
 %.raw.ttx: %.raw.ttf
@@ -48,4 +55,5 @@ clean:
 	-rm -f ${TARGETS} ${TARGETS2} ${PACKAGES}
 	-rm -f ${TARGETS:.ttf=.ttx} ${TARGETS:.ttf=.raw.ttf} ${TARGETS:.ttf=.raw.ttx}
 	-rm -f ${TARGETS2:.ttf=.ttx} ${TARGETS2:.ttf=.raw.ttf} ${TARGETS2:.ttf=.raw.ttx}
+	-rm -f PatchGlyph2-Regular.sfd PatchGlyph2-Bold.sfd
 	-rm -rf ${PACKAGES:.tar.xz=}

@@ -316,7 +316,7 @@ for glyph in patchFont:
 		if glyphPattern:
 			genseki[glyph].addPosSub("Hentaigana with dakuten", glyphPattern.group(1, 2))
 		# 「し」「そ」の異体字
-		glyphPattern = re.search(r'^(uni30[0-9A-F]{2})\.salt$', glyph, re.A)
+		glyphPattern = re.search(r'^(uni30[0-9A-F]{2}(_uni309A\.ccmp)?)\.salt$', glyph, re.A)
 		if glyphPattern:
 			genseki[glyphPattern.group(1)].addPosSub("Stylistic Hiragana alternates", glyph)
 		# 「ネ」「ヰ」の異体字
