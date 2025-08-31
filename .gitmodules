@@ -4,3 +4,6 @@
 [submodule "genseki-font"]
 	path = genseki-font
 	url = https://github.com/ButTaiwan/genseki-font.git
+[submodule "GenSekiHentaiganaGothic"]
+	path = GenSekiHentaiganaGothic
+	url = git@github.com:MihailJP/GenSekiHentaiganaGothic.git
