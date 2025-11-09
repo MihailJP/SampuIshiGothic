@@ -490,4 +490,4 @@ font.encoding = "UnicodeFull"
 font.buildOrReplaceAALTFeatures()
 
 # 出力
-font.generate(argv[1])
+font.generate(argv[1], flags=("opentype", "no-mac-names"))
