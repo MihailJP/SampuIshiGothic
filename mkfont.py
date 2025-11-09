@@ -220,7 +220,9 @@ for glyph in font.selection.byGlyphs:
 font.copyright = """Copyright (c) 2006 Raph Levien
 Copyright (c) 2010-2012 Dimosthenis Kaponis
 Copyright (c) 2012-2024 MihailJP
-Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'. Source is a trademark of Adobe in the United States and/or other countries."""
+Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'. Source is a trademark of Adobe in the United States and/or other countries.
+Some Hentaigana glyphs are derived from ShokakiHentaiganaGothic and SukimaGothic.
+Other Kana glyphs are derived from GenSekiGothic."""
 font.version = "2.5"
 font.sfntRevision = None
 
@@ -239,6 +241,12 @@ elif subFamily == "Bold":
 elif subFamily == "Bold Italic":
 	font.appendSFNTName("Japanese", "SubFamily", "太字斜体")
 	font.appendSFNTName("Japanese", "Fullname", "算譜岩ゴシック 太字斜体" if iwaFont else "算譜石ゴシック 太字斜体")
+font.appendSFNTName("Japanese", "Copyright", """Copyright (c) 2006 Raph Levien
+Copyright (c) 2010-2012 Dimosthenis Kaponis
+Copyright (c) 2012-2024 MihailJP
+Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'. Source is a trademark of Adobe in the United States and/or other countries.
+変体仮名グリフの一部は、しょかき変体仮名ゴチック、すきまゴシックに由来します。
+その他の仮名グリフは、源石ゴシックに由来します。""")
 
 # 丸数字と一部の記号を除去
 rejected_glyphs = set()

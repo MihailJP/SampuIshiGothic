@@ -40,10 +40,10 @@ Version 2.5 以降、[源石変体仮名ゴシック](https://github.com/MihailJ
 |:-------:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | U+1B00x | A | A | A | A | A | A | A | A | A | A | A | A | B | A | A | A |
 | U+1B01x | B | B | B | A | B | A | B | B | B | A | A | B | B | A | A | A |
-| U+1B02x | B | A | B | B | A | B | A | A | B | B | A | A | B | B | B | B |
-| U+1B03x | A | B | B | B | A | B | B | A | A | B | A | B | B | B | B | A |
+| U+1B02x | B | A | B | B | A | B | A | A | B | B | A | A | A | B | B | B |
+| U+1B03x | A | B | B | B | A | B | B | A | A | B | A | B | B | B | A | A |
 | U+1B04x | B | B | B | B | B | B | B | B | A | B | B | B | B | B | A | A |
-| U+1B05x | B | A | A | B | B | A | B | B | B | B | A | A | B | B | B | A |
+| U+1B05x | B | A | A | B | B | A | B | B | B | B | A | A | B | B | A | A |
 | U+1B06x | C | B | B | B | B | B | A | B | B | B | B | B | A | A | B | B |
 | U+1B07x | B | B | A | B | B | B | B | B | B | B | B | A | B | B | B | B |
 | U+1B08x | B | C | B | B | B | B | A | B | B | B | B | A | A | B | B | B |
