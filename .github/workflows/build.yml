@@ -1,0 +1,79 @@
+#name: Build and check fonts
+name: Build fonts
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+    - name: Set up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: ">=3.9"
+    - name: Install Python dependencies
+      run: |
+        python3 -m venv venv
+        source venv/bin/activate
+        pip3 install fonttools
+    - name: Install Fontforge
+      run: sudo apt install fontforge
+    - name: Build
+      run: source venv/bin/activate; make
+    - name: Make distributable
+      run: make dist
+    - name: Upload Sampu Ishi Gothic Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: SampuIshiGothic
+        path: SampuIshiGothic/**
+    - name: Upload Sampu Iwa Gothic Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: SampuIwaGothic
+        path: SampuIwaGothic/**
+  check:
+    name: Check
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: ">=3.9"
+    - name: Install Python Fontbakery
+      run: |
+        python3 -m venv venv
+        source venv/bin/activate
+        pip3 install shaperglot glyphsets fontbakery
+    - name: Download the Artifact
+      uses: actions/download-artifact@v4
+    - name: Check Sampu Ishi Gothic Fonts
+      run: |
+        source venv/bin/activate
+        fontbakery check-universal \
+          -xopentype/STAT/ital_axis \
+          -xsmart_dropout \
+          -xfile_size \
+          -xnested_components \
+          -xoverlapping_path_segments \
+          -xwhitespace_ink \
+          -xbase_has_width \
+          SampuIshiGothic/*.ttf
+    - name: Check Sampu Iwa Gothic Fonts
+      run: |
+        source venv/bin/activate
+        fontbakery check-universal \
+          -xopentype/STAT/ital_axis \
+          -xsmart_dropout \
+          -xfile_size \
+          -xnested_components \
+          -xoverlapping_path_segments \
+          -xwhitespace_ink \
+          -xbase_has_width \
+          SampuIwaGothic/*.ttf
