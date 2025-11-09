@@ -10,8 +10,8 @@ PACKAGES=SampuIshiGothic.tar.xz SampuIwaGothic.tar.xz
 .PHONY: all
 all: ${TARGETS} ${TARGETS2}
 
-.INTERMEDIATE: ${TARGETS:.ttf=.ttx} ${TARGETS:.ttf=.raw.ttf} ${TARGETS:.ttf=.raw.ttx}
-.INTERMEDIATE: ${TARGETS2:.ttf=.ttx} ${TARGETS2:.ttf=.raw.ttf} ${TARGETS2:.ttf=.raw.ttx}
+.INTERMEDIATE: ${TARGETS:.ttf=.ttx} ${TARGETS:.ttf=.raw.ttf} ${TARGETS:.ttf=.raw.ttx} ${TARGETS:.ttf=.raw.sfd}
+.INTERMEDIATE: ${TARGETS2:.ttf=.ttx} ${TARGETS2:.ttf=.raw.ttf} ${TARGETS2:.ttf=.raw.ttx} ${TARGETS2:.ttf=.raw.sfd}
 .INTERMEDIATE: PatchGlyph2-Regular.sfd PatchGlyph2-Bold.sfd
 
 PatchGlyph2-Regular.sfd: GenSekiHentaiganaGothic/GenSekiHentaiganaGothic.sfd PatchGlyph-Regular.sfd
@@ -55,5 +55,6 @@ clean:
 	-rm -f ${TARGETS} ${TARGETS2} ${PACKAGES}
 	-rm -f ${TARGETS:.ttf=.ttx} ${TARGETS:.ttf=.raw.ttf} ${TARGETS:.ttf=.raw.ttx}
 	-rm -f ${TARGETS2:.ttf=.ttx} ${TARGETS2:.ttf=.raw.ttf} ${TARGETS2:.ttf=.raw.ttx}
+	-rm -f ${TARGETS:.ttf=.raw.sfd} ${TARGETS2:.ttf=.raw.sfd}
 	-rm -f PatchGlyph2-Regular.sfd PatchGlyph2-Bold.sfd
 	-rm -rf ${PACKAGES:.tar.xz=}

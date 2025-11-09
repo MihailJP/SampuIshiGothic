@@ -10,6 +10,24 @@ def selectGlyphsWorthOutputting(font, f = lambda _: True):
 		if font[glyph].isWorthOutputting() and f(font[glyph]):
 			font.selection.select(("more",), glyph)
 
+def decomposeNestedRefs(font):
+	while True:
+		nestedRefsFound = False
+		for glyph in font.glyphs():
+			decomposedRef = []
+			for ref in glyph.references:
+				(srcglyph, matrix, _) = ref
+				if len(font[srcglyph].references) > 0:
+					print("Glyph " + glyph.glyphname + " has a nested reference to " + srcglyph)
+					for srcref in font[srcglyph].references:
+						decomposedRef += [(srcref[0], psMat.compose(srcref[1], matrix), False)]
+					nestedRefsFound = True
+				else:
+					decomposedRef += [ref]
+			glyph.references = tuple(decomposedRef)
+		if not nestedRefsFound:
+			break
+
 blockElements = {0x2429} \
 	| set(range(0x2500, 0x25a0)) \
 	| set(range(0x25e2, 0x25e6)) \
@@ -488,6 +506,14 @@ font.encoding = "UnicodeFull"
 
 # `aalt`機能を更新
 font.buildOrReplaceAALTFeatures()
+
+# フォントを開き直す (ワークアラウンド)
+font.save(argv[1].replace('.ttf','.sfd'))
+oldfont = font
+font = fontforge.open(argv[1].replace('.ttf','.sfd'))
+
+# ネストした参照を解消する
+decomposeNestedRefs(font)
 
 # 出力
 font.generate(argv[1], flags=("opentype", "no-mac-names"))

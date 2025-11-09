@@ -1,5 +1,7 @@
 *.ttf
+*.ttx
 *.xz
+*.raw.sfd
 ChangeLog
 SampuIshiGothic/
 SampuIwaGothic/

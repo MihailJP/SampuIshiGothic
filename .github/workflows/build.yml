@@ -60,7 +60,6 @@ jobs:
           -xopentype/STAT/ital_axis \
           -xsmart_dropout \
           -xfile_size \
-          -xnested_components \
           -xoverlapping_path_segments \
           -xwhitespace_ink \
           -xbase_has_width \
@@ -72,7 +71,6 @@ jobs:
           -xopentype/STAT/ital_axis \
           -xsmart_dropout \
           -xfile_size \
-          -xnested_components \
           -xoverlapping_path_segments \
           -xwhitespace_ink \
           -xbase_has_width \
