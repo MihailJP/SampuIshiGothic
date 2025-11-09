@@ -2,7 +2,7 @@ TARGETS=SampuIshiGothic.ttf SampuIshiGothic-Bold.ttf \
 SampuIshiGothic-Italic.ttf SampuIshiGothic-BoldItalic.ttf
 TARGETS2=SampuIwaGothic.ttf SampuIwaGothic-Bold.ttf \
 SampuIwaGothic-Italic.ttf SampuIwaGothic-BoldItalic.ttf
-DOCUMENTS=README.md ChangeLog LICENSE
+DOCUMENTS=README.md ChangeLog OFL.txt
 PACKAGES=SampuIshiGothic.tar.xz SampuIwaGothic.tar.xz
 
 .SUFFIXES: .tar.xz
