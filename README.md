@@ -70,7 +70,7 @@ Version 2.5 以降、[源石変体仮名ゴシック](https://github.com/MihailJ
 
 ライセンス
 ----------
-このフォントは、[SIL Open Font License Version 1.1](LICENSE) でライセンスされています。
+このフォントは、[SIL Open Font License Version 1.1](OFL.txt) でライセンスされています。
 
 上記「変体仮名グリフの出所」の A と B についても、SIL Open Font License Version 1.1
 でライセンスされています。
