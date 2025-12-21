@@ -22,7 +22,10 @@ jobs:
         source venv/bin/activate
         pip3 install fonttools
     - name: Install Fontforge
-      run: sudo apt install fontforge
+      run: |
+        sudo apt update
+        sudo apt upgrade
+        sudo apt install fontforge
     - name: Build
       run: source venv/bin/activate; make
     - name: Make distributable
