@@ -212,8 +212,8 @@ selectGlyphsWorthOutputting(font, lambda glyph: glyph.unicode not in blockElemen
 font.transform(psMat.scale(634/735), ("round",))
 font.transform(psMat.translate(-8, 0), ("round",))
 selectGlyphsWorthOutputting(font, lambda glyph: glyph.unicode in blockElements)
-font.transform(psMat.scale(500/599, 1), ("round",))
-font.transform(psMat.translate(0, 60), ("round",))
+font.transform(psMat.scale(500/599, 1000/1110), ("round",))
+font.transform(psMat.translate(0, 54), ("round",))
 selectGlyphsWorthOutputting(font)
 for glyph in font.selection.byGlyphs:
 	glyph.width = 500
