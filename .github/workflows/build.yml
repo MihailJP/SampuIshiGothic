@@ -60,6 +60,7 @@ jobs:
       run: |
         source venv/bin/activate
         fontbakery check-universal \
+          -xfontdata_namecheck \
           -xopentype/STAT/ital_axis \
           -xfile_size \
           -xoverlapping_path_segments \
@@ -69,6 +70,7 @@ jobs:
       run: |
         source venv/bin/activate
         fontbakery check-universal \
+          -xfontdata_namecheck \
           -xopentype/STAT/ital_axis \
           -xfile_size \
           -xoverlapping_path_segments \
