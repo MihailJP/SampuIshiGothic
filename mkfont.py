@@ -213,7 +213,7 @@ font.transform(psMat.scale(634/735), ("round",))
 font.transform(psMat.translate(-8, 0), ("round",))
 selectGlyphsWorthOutputting(font, lambda glyph: glyph.unicode in blockElements)
 font.transform(psMat.scale(500/599, 1000/1110), ("round",))
-font.transform(psMat.translate(0, 54), ("round",))
+font.transform(psMat.translate(0, -6), ("round",))
 selectGlyphsWorthOutputting(font)
 for glyph in font.selection.byGlyphs:
 	glyph.width = 500
@@ -444,18 +444,15 @@ font.os2_winascent_add = genseki.os2_winascent_add
 font.os2_windescent_add = genseki.os2_windescent_add
 font.os2_winascent = genseki.os2_winascent
 font.os2_windescent = genseki.os2_windescent
-font.os2_typoascent_add = genseki.os2_typoascent_add
-font.os2_typodescent_add = genseki.os2_typodescent_add
-font.os2_typoascent = genseki.os2_typoascent
-font.os2_typodescent = genseki.os2_typodescent
-font.os2_typolinegap = genseki.os2_typolinegap
-font.hhea_ascent_add = genseki.hhea_ascent_add
-font.hhea_descent_add = genseki.hhea_descent_add
-font.hhea_ascent = genseki.hhea_ascent
-font.hhea_descent = genseki.hhea_descent
-font.hhea_linegap = genseki.hhea_linegap
+font.os2_typoascent_add = font.hhea_ascent_add = 0
+font.os2_typodescent_add = font.hhea_descent_add = 0
+font.os2_typoascent = font.hhea_ascent = font.ascent
+font.os2_typodescent = font.hhea_descent = -font.descent
+font.os2_typolinegap = font.hhea_linegap = 0
+font.os2_capheight = 624
+font.os2_xheight = 457
 font.os2_family_class = genseki.os2_family_class
-#font.os2_stylemap = genseki.os2_stylemap
+# font.os2_stylemap = genseki.os2_stylemap
 font.os2_panose = genseki.os2_panose
 font.os2_version = genseki.os2_version
 font.os2_strikeypos = genseki.os2_strikeypos
