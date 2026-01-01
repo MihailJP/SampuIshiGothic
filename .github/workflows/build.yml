@@ -65,6 +65,8 @@ jobs:
           -xfile_size \
           -xoverlapping_path_segments \
           -xwhitespace_ink \
+          -xopentype/xavgcharwidth \
+          -xcjk_chws_feature \
           SampuIshiGothic/*.ttf
     - name: Check Sampu Iwa Gothic Fonts
       run: |
@@ -75,4 +77,6 @@ jobs:
           -xfile_size \
           -xoverlapping_path_segments \
           -xwhitespace_ink \
+          -xopentype/xavgcharwidth \
+          -xcjk_chws_feature \
           SampuIwaGothic/*.ttf
