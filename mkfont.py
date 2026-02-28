@@ -521,4 +521,4 @@ font = fontforge.open(argv[1].replace('.ttf','.sfd'))
 decomposeNestedRefs(font)
 
 # 出力
-font.generate(argv[1], flags=("opentype", "no-mac-names"))
+font.generate(argv[1], flags=("opentype", "no-mac-names", "no-FFTM-table"))
