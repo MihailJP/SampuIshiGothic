@@ -23,6 +23,7 @@ jobs:
         pip3 install fonttools
     - name: Install Fontforge
       run: |
+        sudo apt remove firefox
         sudo apt update
         sudo apt upgrade
         sudo apt install fontforge
@@ -60,6 +61,7 @@ jobs:
       run: |
         source venv/bin/activate
         fontbakery check-universal \
+          --full-lists \
           -xfontdata_namecheck \
           -xopentype/STAT/ital_axis \
           -xfile_size \
@@ -72,6 +74,7 @@ jobs:
       run: |
         source venv/bin/activate
         fontbakery check-universal \
+          --full-lists \
           -xfontdata_namecheck \
           -xopentype/STAT/ital_axis \
           -xfile_size \
