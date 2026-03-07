@@ -1,13 +1,28 @@
 exclude_checks = [
     'opentype/STAT/ital_axis',
-    'file_size',
-    'overlapping_path_segments',
-    'whitespace_ink',
+    'file_size',  # inevitable
+    'overlapping_path_segments',  # out of memory
+    'whitespace_ink',  # Fullwidth space not a whitespace in coding
     'opentype/xavgcharwidth',
-    'cjk_chws_feature',
+    'cjk_chws_feature',  # not needed for programming font
 ]
 
 [[overrides]]  # Fontbakery workaround
 code = 'namecheck-service'
 status = 'SKIP'
 reason = 'Skip if this external service is offline'
+
+[[overrides]]
+code = 'ascent'
+status = 'INFO'
+reason = 'For CJK programming font this is not a real issue'
+
+[[overrides]]
+code = 'descent'
+status = 'INFO'
+reason = 'For CJK programming font this is not a real issue'
+
+[[overrides]]
+code = 'nameid4-too-long'
+status = 'WARN'
+reason = 'Postponed'
