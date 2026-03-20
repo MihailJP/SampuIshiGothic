@@ -5,12 +5,8 @@ exclude_checks = [
     'whitespace_ink',  # Fullwidth space not a whitespace in coding
     'opentype/xavgcharwidth',
     'cjk_chws_feature',  # not needed for programming font
+    'fontdata_namecheck',  # Often offline
 ]
-
-[[overrides]]  # Fontbakery workaround
-code = 'namecheck-service'
-status = 'SKIP'
-reason = 'Skip if this external service is offline'
 
 [[overrides]]
 code = 'ascent'
