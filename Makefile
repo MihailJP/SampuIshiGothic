@@ -14,22 +14,31 @@ all: ${TARGETS} ${TARGETS2}
 .INTERMEDIATE: ${TARGETS2:.ttf=.ttx} ${TARGETS2:.ttf=.raw.ttf} ${TARGETS2:.ttf=.raw.ttx} ${TARGETS2:.ttf=.raw.sfd}
 .INTERMEDIATE: PatchGlyph2-Regular.sfd PatchGlyph2-Bold.sfd
 
+Inconsolata-LGC/Inconsolata-EX.sfd: Inconsolata-LGC/Inconsolata-LGC.sfd
+	cd Inconsolata-LGC; $(MAKE) Inconsolata-EX.sfd
+Inconsolata-LGC/Inconsolata-EX-Italic.sfd: Inconsolata-LGC/Inconsolata-LGC-Italic.sfd
+	cd Inconsolata-LGC; $(MAKE) Inconsolata-EX-Italic.sfd
+Inconsolata-LGC/Inconsolata-EX-Bold.sfd: Inconsolata-LGC/Inconsolata-LGC-Bold.sfd
+	cd Inconsolata-LGC; $(MAKE) Inconsolata-EX-Bold.sfd
+Inconsolata-LGC/Inconsolata-EX-BoldItalic.sfd: Inconsolata-LGC/Inconsolata-LGC-BoldItalic.sfd
+	cd Inconsolata-LGC; $(MAKE) Inconsolata-EX-BoldItalic.sfd
+
 PatchGlyph2-Regular.sfd: GenSekiHentaiganaGothic/GenSekiHentaiganaGothic.sfd PatchGlyph-Regular.sfd
 	./mkpatch.py $@ $^
 
 PatchGlyph2-Bold.sfd: GenSekiHentaiganaGothic/GenSekiHentaiganaGothic-Bold.sfd PatchGlyph-Bold.sfd
 	./mkpatch.py $@ $^
 
-SampuIshiGothic.raw.ttf SampuIwaGothic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC.sfd genseki-font/ttc/GenSekiGothic2-R.ttc PatchGlyph2-Regular.sfd
+SampuIshiGothic.raw.ttf SampuIwaGothic.raw.ttf: Inconsolata-LGC/Inconsolata-EX.sfd genseki-font/ttc/GenSekiGothic2-R.ttc PatchGlyph2-Regular.sfd
 	./mkfont.py $@ $^
 
-SampuIshiGothic-Bold.raw.ttf SampuIwaGothic-Bold.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-Bold.sfd genseki-font/ttc/GenSekiGothic2-B.ttc PatchGlyph2-Bold.sfd
+SampuIshiGothic-Bold.raw.ttf SampuIwaGothic-Bold.raw.ttf: Inconsolata-LGC/Inconsolata-EX-Bold.sfd genseki-font/ttc/GenSekiGothic2-B.ttc PatchGlyph2-Bold.sfd
 	./mkfont.py $@ $^
 
-SampuIshiGothic-Italic.raw.ttf SampuIwaGothic-Italic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-Italic.sfd genseki-font/ttc/GenSekiGothic2-R.ttc PatchGlyph2-Regular.sfd
+SampuIshiGothic-Italic.raw.ttf SampuIwaGothic-Italic.raw.ttf: Inconsolata-LGC/Inconsolata-EX-Italic.sfd genseki-font/ttc/GenSekiGothic2-R.ttc PatchGlyph2-Regular.sfd
 	./mkfont.py $@ $^
 
-SampuIshiGothic-BoldItalic.raw.ttf SampuIwaGothic-BoldItalic.raw.ttf: Inconsolata-LGC/Inconsolata-LGC-BoldItalic.sfd genseki-font/ttc/GenSekiGothic2-B.ttc PatchGlyph2-Bold.sfd
+SampuIshiGothic-BoldItalic.raw.ttf SampuIwaGothic-BoldItalic.raw.ttf: Inconsolata-LGC/Inconsolata-EX-BoldItalic.sfd genseki-font/ttc/GenSekiGothic2-B.ttc PatchGlyph2-Bold.sfd
 	./mkfont.py $@ $^
 
 %.raw.ttx: %.raw.ttf
@@ -52,6 +61,7 @@ SampuIwaGothic.tar.xz: ${TARGETS2} ${DOCUMENTS}
 
 .PHONY: clean
 clean:
+	-cd Inconsolata-LGC; $(MAKE) clean
 	-rm -f ${TARGETS} ${TARGETS2} ${PACKAGES}
 	-rm -f ${TARGETS:.ttf=.ttx} ${TARGETS:.ttf=.raw.ttf} ${TARGETS:.ttf=.raw.ttx}
 	-rm -f ${TARGETS2:.ttf=.ttx} ${TARGETS2:.ttf=.raw.ttf} ${TARGETS2:.ttf=.raw.ttx}

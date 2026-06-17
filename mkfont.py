@@ -183,9 +183,9 @@ def isToBeConvertedToFullwidthRight(font, glyph):
 
 # Inconsolataの読み込み、サイズ調整、諸設定
 font = fontforge.open(argv[2])
-tmpname = font.fontname.replace("InconsolataLGC", "SampuIwaGothic" if iwaFont else "SampuIshiGothic")
+tmpname = font.fontname.replace("InconsolataEX", "SampuIwaGothic" if iwaFont else "SampuIshiGothic")
 font.fontname = tmpname
-tmpname = font.fullname.replace("Inconsolata LGC", "Sampu Iwa Gothic" if iwaFont else "Sampu Ishi Gothic")
+tmpname = font.fullname.replace("Inconsolata EX", "Sampu Iwa Gothic" if iwaFont else "Sampu Ishi Gothic")
 font.fullname = tmpname
 font.familyname = "Sampu Iwa Gothic" if iwaFont else "Sampu Ishi Gothic"
 font.em = 1000
@@ -234,7 +234,7 @@ Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Sour
 # 丸数字と一部の記号を除去
 rejected_glyphs = set()
 for glyph in font:
-	if re.search(r'[^v]+circle($|\.)', glyph):
+	if re.search(r'[^v]+circle($|\.)', glyph) and glyph != 'dottedcircle':
 		rejected_glyphs.add(glyph)
 	elif re.search(r'\.smallnarrow', glyph):
 		rejected_glyphs.add(glyph)

@@ -1,8 +1,11 @@
 プログラミング用フォント 算譜石ゴシック
 =======================================
 
-プログラミング用フォント [Inconsolata LGC](https://github.com/MihailJP/Inconsolata-LGC) に、
+プログラミング用フォント [Inconsolata EX](https://github.com/MihailJP/Inconsolata-LGC) に、
 [源石ゴシック](https://github.com/ButTaiwan/genseki-font) を元にした日本語グリフを追加したものです。
+
+Version 4.000 以降、Inconsolata LGC から Inconsolata EX に移行しました。
+Inconsolata LGC と比較して、欧文の結合文字やアラビア文字が追加されています。
 
 変体仮名のグリフは、一部を除き[しょかき変体仮名ゴチック](https://booth.pm/ja/items/5633978)または
 [すきまゴシック](https://booth.pm/ja/items/2117070)に由来します。
