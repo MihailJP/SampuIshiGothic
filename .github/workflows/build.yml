@@ -9,36 +9,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check out the repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         submodules: true
     - name: Set up Python
       uses: actions/setup-python@v6
       with:
         python-version: ">=3.12"
-    - name: Install Python dependencies
-      run: |
-        sudo pip3 install "fontforge-ref-sel-util>=0.1.4"
-        python3 -m venv venv
-        source venv/bin/activate
-        pip3 install fonttools
-    - name: Install Fontforge
+    - name: Update environment
       run: |
         sudo apt remove firefox
         sudo apt update
         sudo apt upgrade
-        sudo apt install fontforge
+    - name: Build and install Fontforge
+      uses: MihailJP/setup-fontforge@v1
+    - name: Install Python dependencies
+      run: |
+        pip3 install "fontforge-ref-sel-util>=0.1.4"
+        pip3 install fonttools
     - name: Build
-      run: source venv/bin/activate; make
+      run: make
     - name: Make distributable
       run: make dist
     - name: Upload Sampu Ishi Gothic Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: SampuIshiGothic
         path: SampuIshiGothic/**
     - name: Upload Sampu Iwa Gothic Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: SampuIwaGothic
         path: SampuIwaGothic/**
@@ -48,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get Fontspector configuration file
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         sparse-checkout: |
           fontspector.toml
@@ -58,7 +57,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Download the Artifact
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v8
     - name: Check Sampu Ishi Gothic Fonts
       run: |
         fontspector -l info --full-lists \
