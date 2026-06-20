@@ -199,7 +199,7 @@ font.transform(psMat.scale(500/599, 1000/1110), ("round",))
 font.transform(psMat.translate(0, -6), ("round",))
 selectGlyphsWorthOutputting(font)
 for glyph in font.selection.byGlyphs:
-	glyph.width = 500
+	glyph.width = 500 if glyph.width > 0 else 0
 font.copyright = """Copyright (c) 2006 Raph Levien
 Copyright (c) 2010-2012 Dimosthenis Kaponis
 Copyright (c) 2012-2024 MihailJP
@@ -478,6 +478,9 @@ for lookup in genseki.gsub_lookups:
 	if lookup.find("jp78") == lookup.find("jp83") == lookup.find("jp90") == lookup.find("nlck") == lookup.find("ccmp") == -1 \
 	and lookup != "Stylistic Kana alternates" and lookup != "Historical Kana":
 		genseki.removeLookup(lookup)
+for lookup in genseki.gsub_lookups:
+	newFSL = tuple(tuple([s[0], tuple(lng for lng in s[1] if lng[0] not in ['latn', 'grek', 'cyrl'])]) for s in genseki.getLookupInfo(lookup)[2])
+	genseki.lookupSetFeatureList(lookup, newFSL)
 
 # OTFグリフクラス（ワークアラウンド）
 for glyph in genseki:
