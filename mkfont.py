@@ -11,6 +11,8 @@ def selectGlyphsWorthOutputting(font, f = lambda _: True):
 		if font[glyph].isWorthOutputting() and f(font[glyph]):
 			font.selection.select(("more",), glyph)
 
+tmpfile = argv[1].replace('.ttf','.sfd')
+
 blockElements = {0x2429} \
 	| set(range(0x2500, 0x25a0)) \
 	| set(range(0x25e2, 0x25e6)) \
@@ -230,6 +232,11 @@ Copyright (c) 2012-2024 MihailJP
 Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'. Source is a trademark of Adobe in the United States and/or other countries.
 変体仮名グリフの一部は、しょかき変体仮名ゴチック、すきまゴシックに由来します。
 その他の仮名グリフは、源石ゴシックに由来します。""")
+
+# フォントを開き直す (ワークアラウンド)
+font.save(tmpfile)
+font.close()
+font = fontforge.open(tmpfile)
 
 # 丸数字と一部の記号を除去
 rejected_glyphs = set()
@@ -509,9 +516,9 @@ font.encoding = "UnicodeFull"
 font.buildOrReplaceAALTFeatures()
 
 # フォントを開き直す (ワークアラウンド)
-font.save(argv[1].replace('.ttf','.sfd'))
-oldfont = font
-font = fontforge.open(argv[1].replace('.ttf','.sfd'))
+font.save(tmpfile)
+font.close()
+font = fontforge.open(tmpfile)
 
 # ネストした参照を解消する
 fontforge_refsel.decomposeNestedRefs(font, True)
