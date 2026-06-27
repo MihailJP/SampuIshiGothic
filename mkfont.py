@@ -234,7 +234,7 @@ Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Sour
 # 丸数字と一部の記号を除去
 rejected_glyphs = set()
 for glyph in font:
-	if re.search(r'[^v]+circle($|\.)', glyph) and glyph != 'dottedcircle':
+	if re.search(r'[^v]+circle($|\.)', glyph) and (glyph not in ['dottedcircle', 'Acircle', 'acircle', 'Acircle.koalib', 'acircle.koalib']):
 		rejected_glyphs.add(glyph)
 	elif re.search(r'\.smallnarrow', glyph):
 		rejected_glyphs.add(glyph)
@@ -490,6 +490,16 @@ for glyph in genseki:
 # サイズ調整（Ricty Diminishedと同様）
 selectGlyphsWorthOutputting(genseki, lambda glyph: glyph.unicode not in range(0x2500, 0x2580))
 genseki.transform(psMat.compose(psMat.scale(0.95), psMat.translate(10, 0)), ('noWidth', 'round'))
+
+# Ⓐⓐを貼り付け（Koalib語用のグリフへの変換を残す）
+genseki.selection.select("uni24B6")
+genseki.copy()
+font.selection.select("Acircle")
+font.paste()
+genseki.selection.select("uni24D0")
+genseki.copy()
+font.selection.select("acircle")
+font.paste()
 
 # 統合
 font.mergeFonts(genseki)
