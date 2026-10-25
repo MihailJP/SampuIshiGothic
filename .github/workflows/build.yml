@@ -60,11 +60,17 @@ jobs:
       uses: actions/download-artifact@v8
     - name: Check Sampu Ishi Gothic Fonts
       run: |
-        fontspector -l info --full-lists \
+        fontspector -c fontdata_namecheck -l info --full-lists \
+          --configuration fontspector.toml \
+          SampuIshiGothic/*.ttf || true
+        fontspector -x fontdata_namecheck -l info --full-lists \
           --configuration fontspector.toml \
           SampuIshiGothic/*.ttf
     - name: Check Sampu Iwa Gothic Fonts
       run: |
-        fontspector -l info --full-lists \
+        fontspector -c fontdata_namecheck -l info --full-lists \
+          --configuration fontspector.toml \
+          SampuIwaGothic/*.ttf || true
+        fontspector -x fontdata_namecheck -l info --full-lists \
           --configuration fontspector.toml \
           SampuIwaGothic/*.ttf

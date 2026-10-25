@@ -5,7 +5,6 @@ exclude_checks = [
     'whitespace_ink',  # Fullwidth space not a whitespace in coding
     'opentype/xavgcharwidth',
     'cjk_chws_feature',  # not needed for programming font
-    'fontdata_namecheck',  # Often offline
 ]
 
 [[overrides]]
