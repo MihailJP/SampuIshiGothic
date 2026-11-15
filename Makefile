@@ -14,13 +14,13 @@ all: ${TARGETS} ${TARGETS2}
 .INTERMEDIATE: ${TARGETS2:.ttf=.ttx} ${TARGETS2:.ttf=.raw.ttf} ${TARGETS2:.ttf=.raw.ttx} ${TARGETS2:.ttf=.raw.sfd}
 .INTERMEDIATE: PatchGlyph2-Regular.sfd PatchGlyph2-Bold.sfd
 
-Inconsolata-LGC/Inconsolata-EX.sfd: Inconsolata-LGC/Inconsolata-LGC.sfd
+Inconsolata-LGC/Inconsolata-EX.sfd: Inconsolata-LGC/Inconsolata-LGC-Base.sfd
 	cd Inconsolata-LGC; $(MAKE) Inconsolata-EX.sfd
-Inconsolata-LGC/Inconsolata-EX-Italic.sfd: Inconsolata-LGC/Inconsolata-LGC-Italic.sfd
+Inconsolata-LGC/Inconsolata-EX-Italic.sfd: Inconsolata-LGC/Inconsolata-LGC-Base-Italic.sfd
 	cd Inconsolata-LGC; $(MAKE) Inconsolata-EX-Italic.sfd
-Inconsolata-LGC/Inconsolata-EX-Bold.sfd: Inconsolata-LGC/Inconsolata-LGC-Bold.sfd
+Inconsolata-LGC/Inconsolata-EX-Bold.sfd: Inconsolata-LGC/Inconsolata-LGC-Base-Bold.sfd
 	cd Inconsolata-LGC; $(MAKE) Inconsolata-EX-Bold.sfd
-Inconsolata-LGC/Inconsolata-EX-BoldItalic.sfd: Inconsolata-LGC/Inconsolata-LGC-BoldItalic.sfd
+Inconsolata-LGC/Inconsolata-EX-BoldItalic.sfd: Inconsolata-LGC/Inconsolata-LGC-Base-BoldItalic.sfd
 	cd Inconsolata-LGC; $(MAKE) Inconsolata-EX-BoldItalic.sfd
 
 PatchGlyph2-Regular.sfd: GenSekiHentaiganaGothic/GenSekiHentaiganaGothic.sfd PatchGlyph-Regular.sfd
